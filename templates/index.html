@@ -1,1 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link href='https://fonts.googleapis.com/css?family=Chivo Mono' rel='stylesheet'>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenAI Text Generator</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-size: 20px;
+            font-family: Chivo Mono;
+        }
+        h3.fontsize16 {
+            font-size: 16px;
+        }
+        .custom-button {
+            height: 75px;
+            width: 20%;
+            font-weight: 700;
+            font-size: 24px;
+            border: 3px solid #cccccc;
+            background-color: #0077B6;
+            color: #ffffff;
+            border-radius: 17px;
+            transition: background-color 0.3s ease;
+        }
+        .custom-button:hover {
+            background-color: #2c3e50; /* Change color on hover */
+            transition: scale(0.95);
+            opacity: 0.75;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body style="background-color: #FFFFED">
+    <div style="text-align: center;">
+        <h1>Mathematics Game Wow!!!!!!!!!!!!!!!!!!!!!</h1>
+    </div>
+    <div style="text-align: center; margin-top: 20px;">
+        <h3 class="fontsize16">Choose your topic on which you would like to practice!</h3>
+    </div>
+    <div style="text-align: center; margin-top: 50px;">
+        <button class="custom-button" id="TrigButton">Trigonometries</button>
+        <button class="custom-button" id="ParaButton">Parabolas</button>
+    </div>
+    <div style="text-align: center; margin-top: 10px;">
+        <button class="custom-button" id="IneqButton">Inequalities</button>
+        <button class="custom-button" id="ProbButton">Probabilities</button>
+    </div>
+    <div style="text-align: center; margin-top: 10px;">
+        <button class="custom-button" id="MatrButton">Matrices</button>
+        <button class="custom-button" id="NumbButton">Numbers</button>
+    </div>
+    <div style="text-align: center; margin-top: 10px;">
+        <button class="custom-button" id="PropButton">Proportions</button>
+        <button class="custom-button" id="PercButton">Percentages</button>
+    </div>
+    <div style="text-align: center; margin-top: 10px;">
+        <button class="custom-button" id="NuSeButton">Number Sequences</button>
+        <button class="custom-button" id="RatiButton">Ratios</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#difficulty-form').on('submit', function(event) {
+                event.preventDefault();
+                $.ajax({
+                    url: '/generate',
+                    type: 'POST',
+                    data: { difficulty: $('#difficulty').val() },
+                    success: function(response) {
+                        $('#generated-problem').text(response.response);
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
 
