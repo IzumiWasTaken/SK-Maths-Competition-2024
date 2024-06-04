@@ -1,7 +1,6 @@
-# SK MATHS COMPETITION 2024
+# SK MATHEMATICS PROJECT COMPETITION 2024
 
 ## Acknowledgement
-
 
 
 ## Introduction
