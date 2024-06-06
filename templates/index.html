@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link href='https://fonts.googleapis.com/css?family=Chivo Mono' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
     <style>
         body {
             font-size: 20px;
-            font-family: Chivo Mono;
+            font-family: Montserrat;
         }
         h3.fontsize16 {
             font-size: 16px;
@@ -26,6 +26,8 @@
             color: #ffffff;
             border-radius: 17px;
             transition: background-color 0.3s ease;
+            text-align: center;
+            box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
         }
         .custom-button:hover {
             background-color: #2c3e50; /* Change color on hover */
@@ -33,46 +35,80 @@
             opacity: 0.75;
             z-index: 2;
         }
+        .disabledclass {
+            color: #ffffff
+        }
+        .genbutton {
+            height: 50px;
+            width: 15%;
+            font-weight: 700;
+            font-size: 24px;
+            border: 3px solid #000000;
+            background-color: #ffffff;
+            color: #000000;
+            border-radius: 17px;
+            transition: background-color 0.3s ease;
+            text-align: center;
+            box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+        }
+        #problem-container {
+            margin-top:20px; 
+        }
+        #generated-problem {
+            font-size: 40px;
+            color: #555
+        }
     </style>
 </head>
 <body style="background-color: #FFFFED">
-    <div style="text-align: center;">
-        <h1>Mathematics Game Wow!!!!!!!!!!!!!!!!!!!!!</h1>
+    <div class="container">
+        <h1>Math Question Generator</h1>
+        <form id="generateForm"> <!-- Not sure about the actual id requested in app.py -->
+            <label for="topic">Choose a Topic:</label>
+            <select class="custom-button" id="topic" name="topic" style="margin-right: 25px;" required > 
+                <option class="disabledclass" disabled selected value>Choose a Topic</option>
+                <option value="Trig">Trigonometry</option> <!--All value ids stated are reviewed and are correct-->
+                <option value="Para">Parabola</option>
+                <option value="Numbers">Numbers</option>
+                <option value="Prop">Proportions</option>
+                <option value="Matrices">Matrices</option>
+                <option value="Inequalities">Inequalities</option>
+                <option value="Probabilities">Probabilities</option>
+                <option value="Percentages">Percentages</option>
+                <option value="Number Sequences">Number Sequences</option>
+                <option value="Ratio">Ratio</option>
+            </select>
+            <label for="difficulty">Choose a Difficulty:</label>
+            <select class="custom-button" id="difficulty" name="difficulty" style="margin-right: 25px;" required >
+                <option class="disabledclass" disabled selected value>Choose a Difficulty</option>
+                <option value="Easy">Easy</option>
+                <option value="Medium">Medium</option>
+                <option value="Hard">Hard</option>
+                <option value="Difficult">Difficult</option>
+            </select>
+            <button class="genbutton" type="submit" onclick="popup1()">Generate Question</button>
+        </form>        
+        <div class="problem-container">
+            <h2> Generated Problem: </h2>
+        </div>
     </div>
-    <div style="text-align: center; margin-top: 20px;">
-        <h3 class="fontsize16">Choose your topic on which you would like to practice!</h3>
-    </div>
-    <div style="text-align: center; margin-top: 50px;">
-        <button class="custom-button" id="TrigButton">Trigonometries</button>
-        <button class="custom-button" id="ParaButton">Parabolas</button>
-    </div>
-    <div style="text-align: center; margin-top: 10px;">
-        <button class="custom-button" id="IneqButton">Inequalities</button>
-        <button class="custom-button" id="ProbButton">Probabilities</button>
-    </div>
-    <div style="text-align: center; margin-top: 10px;">
-        <button class="custom-button" id="MatrButton">Matrices</button>
-        <button class="custom-button" id="NumbButton">Numbers</button>
-    </div>
-    <div style="text-align: center; margin-top: 10px;">
-        <button class="custom-button" id="PropButton">Proportions</button>
-        <button class="custom-button" id="PercButton">Percentages</button>
-    </div>
-    <div style="text-align: center; margin-top: 10px;">
-        <button class="custom-button" id="NuSeButton">Number Sequences</button>
-        <button class="custom-button" id="RatiButton">Ratios</button>
-    </div>
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
+        function popup1() {
+            alert("Form filled :))")
+        }
         $(document).ready(function() {
             $('#difficulty-form').on('submit', function(event) {
                 event.preventDefault();
                 $.ajax({
-                    url: '/generate',
+                    url:  '/generate',
                     type: 'POST',
-                    data: { difficulty: $('#difficulty').val() },
+                    data: { 
+                        topic: $('#topic').val(),
+                        difficulty: $('#difficulty').val()
+                     },
                     success: function(response) {
+                        $('#problem-container').show();
                         $('#generated-problem').text(response.response);
                     },
                     error: function(error) {
@@ -84,4 +120,3 @@
     </script>
 </body>
 </html>
-
