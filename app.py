@@ -8,7 +8,9 @@ app = Flask(__name__)
 
 user_input = None
 topic = None
+current_question = None
 conversation = []
+
 def trig_difficulty_easy():
     topic = "Trig"
     difficulty = "Easy"
@@ -402,9 +404,14 @@ def index():
 
 @app.route('/generate', methods=['POST'])
 def generate():
-    global user_input, conversation
+    global user_input, conversation, current_question
+
+    topic = request.form.get('topic')
+    difficulty = request.form.get('difficulty')
     
-    difficulty = request.form['difficulty']
+    if not topic or not difficulty:
+        return jsonify({"error": "Topic and difficulty are required"}), 400
+    
     if topic == "Trig":
         if difficulty == "Easy":
             user_input = trig_difficulty_easy()
@@ -414,7 +421,9 @@ def generate():
             user_input = trig_difficulty_hard()
         elif difficulty == "Difficult":
             user_input = trig_difficulty_difficult()
-
+        else:
+            return jsonify({"error": "Invalid difficulty level"}), 400
+        
     if topic == "Para":
         if difficulty == "Easy":
             user_input = para_difficulty_easy()
@@ -424,7 +433,9 @@ def generate():
             user_input = para_difficulty_hard()
         elif difficulty == "Difficult":
             user_input = para_difficulty_difficult()
-            
+        else:
+            return jsonify({"error": "Invalid difficulty level"}), 400
+                    
     if topic == "Numbers":
         if difficulty == "Easy":
             user_input = numbers_difficulty_easy()
@@ -434,7 +445,9 @@ def generate():
             user_input = numbers_difficulty_hard()
         elif difficulty == "Difficult":
             user_input = numbers_difficulty_difficult()
-            
+        else:
+            return jsonify({"error": "Invalid difficulty level"}), 400
+                    
     if topic == "Prop":
         if difficulty == "Easy":
             user_input = propor_difficulty_easy()
@@ -444,7 +457,9 @@ def generate():
             user_input = propor_difficulty_hard()
         elif difficulty == "Difficult":
             user_input = propor_difficulty_difficult()
-            
+        else:
+            return jsonify({"error": "Invalid difficulty level"}), 400
+                    
     if topic == "Matrices":
         if difficulty == "Easy":
             user_input = matric_difficulty_easy()
@@ -454,7 +469,9 @@ def generate():
             user_input = matric_difficulty_hard()
         elif difficulty == "Difficult":
             user_input = matric_difficulty_difficult()
-            
+        else:
+            return jsonify({"error": "Invalid difficulty level"}), 400
+                    
     if topic == "Inequalities":
         if difficulty == "Easy":
             user_input = inequalities_difficulty_easy()
@@ -464,7 +481,9 @@ def generate():
             user_input = inequalities_difficulty_hard()
         elif difficulty == "Difficult":
             user_input = inequalities_difficulty_difficult()
-            
+        else:
+            return jsonify({"error": "Invalid difficulty level"}), 400
+                    
     if topic == "Probabilities":
         if difficulty == "Easy":
             user_input = probabilities_difficulty_easy()
@@ -474,7 +493,9 @@ def generate():
             user_input = probabilities_difficulty_hard()
         elif difficulty == "Difficult":
             user_input = probabilities_difficulty_difficult()
-            
+        else:
+            return jsonify({"error": "Invalid difficulty level"}), 400
+                    
     if topic == "Percentages":
         if difficulty == "Easy":
             user_input = Percentage_difficulty_easy()
@@ -484,7 +505,9 @@ def generate():
             user_input = Percentage_difficulty_hard()
         elif difficulty == "Difficult":
             user_input = Percentage_difficulty_difficult()
-            
+        else:
+            return jsonify({"error": "Invalid difficulty level"}), 400
+                    
     if topic == "Number Sequences":
         if difficulty == "Easy":
             user_input = Sequences_difficulty_easy()
@@ -494,7 +517,9 @@ def generate():
             user_input = Sequences_difficulty_hard()
         elif difficulty == "Difficult":
             user_input = Sequences_difficulty_difficult()
-            
+        else:
+            return jsonify({"error": "Invalid difficulty level"}), 400
+                    
     if topic == "Ratio":
         if difficulty == "Easy":
             user_input = ratio_difficulty_easy()
@@ -504,24 +529,54 @@ def generate():
             user_input = ratio_difficulty_hard()
         elif difficulty == "Difficult":
             user_input = ratio_difficulty_difficult()
+        else:
+            return jsonify({"error": "Invalid difficulty level"}), 400
+        
+    user_input += f" Topic: {topic}."
+    conversation = [{"role": "user", "content": user_input}]
 
-def respond():
-    global conversation
+    try:
+        response = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo-16k",
+            messages=conversation,
+            temperature=1,
+            max_tokens=256,
+            top_p=1,
+            frequency_penalty=0,
+            presence_penalty=0
+        )
+        current_question = response['choices'][0]['message']['content']
+        return jsonify({"response": current_question})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
     
-    user_response = request.form['response']
-    conversation.append({"role": "user", "content": user_input})
 
-    response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo-16k",
-        messages=conversation,
-        temperature=1,
-        max_tokens=256,
-        top_p=1,
-        frequency_penalty=0,
-        presence_penalty=0
-    )
-    conversation.append({"role": "system", "content": response['choices'][0]['message']['content']})
-    return jsonify({"response": response['choices'][0]['message']['content']})
+@app.route('/respond', methods=['POST'])
+def respond():
+    global conversation, current_question
+    
+    user_response = request.form.get('response')
+
+    if not user_response:
+        return jsonify({"error": "Response is required"}), 400
+    
+    conversation.append({"role": "user", "content": f"Question: {current_question} Answer: {user_response}"})
+
+    try:
+        response = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo-16k",
+            messages=conversation,
+            temperature=1,
+            max_tokens=256,
+            top_p=1,
+            frequency_penalty=0,
+            presence_penalty=0
+        )
+        feedback = response['choices'][0]['message']['content']
+        return jsonify({"response": feedback})
+    
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
     app.run(debug=True)
