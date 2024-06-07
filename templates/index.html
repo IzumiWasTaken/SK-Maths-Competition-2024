@@ -1,73 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OpenAI Text Generator</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+    <title>Math Question Generator</title>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
             font-size: 20px;
             font-family: Montserrat;
+            background-color: #FFFFED;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
         }
-        h3.fontsize16 {
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 80%;
+            max-width: 600px;
+        }
+        h1 {
+            color: #333;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin: 20px 0 10px;
+        }
+        select, button, input, textarea {
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 2px solid #ccc;
             font-size: 16px;
+            width: 100%;
+            max-width: 300px;
         }
-        .custom-button {
-            height: 75px;
-            width: 20%;
-            font-weight: 700;
-            font-size: 24px;
-            border: 3px solid #cccccc;
+        button {
             background-color: #0077B6;
-            color: #ffffff;
-            border-radius: 17px;
+            color: #fff;
+            cursor: pointer;
             transition: background-color 0.3s ease;
-            text-align: center;
-            box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
         }
-        .custom-button:hover {
-            background-color: #2c3e50; /* Change color on hover */
-            transition: scale(0.95);
-            opacity: 0.75;
-            z-index: 2;
+        button:hover {
+            background-color: #005f8b;
         }
-        .disabledclass {
-            color: #ffffff
+        #problem-container, #response-container, #feedback-container {
+            margin-top: 20px;
+            display: none;
         }
-        .genbutton {
-            height: 50px;
-            width: 15%;
-            font-weight: 700;
-            font-size: 24px;
-            border: 3px solid #000000;
-            background-color: #ffffff;
-            color: #000000;
-            border-radius: 17px;
-            transition: background-color 0.3s ease;
-            text-align: center;
-            box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
-        }
-        #problem-container {
-            margin-top:20px; 
-        }
-        #generated-problem {
-            font-size: 40px;
-            color: #555
+        #generated-problem, #gpt-response {
+            font-size: 1.2em;
+            color: #555;
         }
     </style>
 </head>
-<body style="background-color: #FFFFED">
+<body>
     <div class="container">
         <h1>Math Question Generator</h1>
-        <form id="generateForm"> <!-- Not sure about the actual id requested in app.py -->
+        <form id="generateForm">
             <label for="topic">Choose a Topic:</label>
-            <select class="custom-button" id="topic" name="topic" style="margin-right: 25px;" required > 
+            <select id="topic" name="topic" required>
                 <option class="disabledclass" disabled selected value>Choose a Topic</option>
-                <option value="Trig">Trigonometry</option> <!--All value ids stated are reviewed and are correct-->
+                <option value="Trig">Trigonometry</option>
                 <option value="Para">Parabola</option>
                 <option value="Numbers">Numbers</option>
                 <option value="Prop">Proportions</option>
@@ -79,42 +82,84 @@
                 <option value="Ratio">Ratio</option>
             </select>
             <label for="difficulty">Choose a Difficulty:</label>
-            <select class="custom-button" id="difficulty" name="difficulty" style="margin-right: 25px;" required >
+            <select id="difficulty" name="difficulty" required>
                 <option class="disabledclass" disabled selected value>Choose a Difficulty</option>
                 <option value="Easy">Easy</option>
                 <option value="Medium">Medium</option>
                 <option value="Hard">Hard</option>
                 <option value="Difficult">Difficult</option>
             </select>
-            <button class="genbutton" type="submit" onclick="popup1()">Generate Question</button>
-        </form>        
-        <div class="problem-container">
-            <h2> Generated Problem: </h2>
+            <button type="submit">Generate Question</button>
+        </form>
+        <div id="problem-container">
+            <h2>Generated Problem:</h2>
+            <p id="generated-problem"></p>
+        </div>
+        <div id="response-container">
+            <label for="user-response">Your Response:</label>
+            <input type="text" id="user-response" name="user-response">
+            <button id="submit-response">Submit Response</button>
+        </div>
+        <div id="feedback-container">
+            <h2>Feedback:</h2>
+            <p id="gpt-response"></p>
+            <button id="next-question">Next Question</button>
+            <button id="back-button">Back</button>
         </div>
     </div>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        function popup1() {
-            alert("Form filled :))")
-        }
         $(document).ready(function() {
-            $('#difficulty-form').on('submit', function(event) {
+            $('#generateForm').on('submit', function(event) {
                 event.preventDefault();
                 $.ajax({
-                    url:  '/generate',
+                    url: '/generate',
                     type: 'POST',
                     data: { 
                         topic: $('#topic').val(),
-                        difficulty: $('#difficulty').val()
-                     },
+                        difficulty: $('#difficulty').val() 
+                    },
                     success: function(response) {
                         $('#problem-container').show();
+                        $('#response-container').show();
                         $('#generated-problem').text(response.response);
                     },
                     error: function(error) {
                         console.log(error);
                     }
                 });
+            });
+
+            $('#submit-response').on('click', function(event) {
+                event.preventDefault();
+                var userResponse = $('#user-response').val();
+                $.ajax({
+                    url: '/respond',
+                    type: 'POST',
+                    data: { response: userResponse },
+                    success: function(response) {
+                        $('#feedback-container').show();
+                        $('#gpt-response').text(response.response);
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });
+            });
+
+            $('#next-question').on('click', function() {
+                $('#generateForm')[0].reset();
+                $('#problem-container, #response-container, #feedback-container').hide();
+                $('#user-response').val('');
+                $('#generated-problem, #gpt-response').text('');
+            });
+
+            $('#back-button').on('click', function() {
+                $('#generateForm')[0].reset();
+                $('#problem-container, #response-container, #feedback-container').hide();
+                $('#user-response').val('');
+                $('#generated-problem, #gpt-response').text('');
             });
         });
     </script>
