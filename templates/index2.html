@@ -60,8 +60,12 @@
         #generated-problem, #gpt-response {
             font-size: 1.2em;
             color: #555;
+            white-space: pre-line; /* Ensures line breaks are preserved */
         }
     </style>
+    <!-- Include MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
     <div class="container">
@@ -93,7 +97,7 @@
         </form>
         <div id="problem-container">
             <h2>Generated Problem:</h2>
-            <p id="generated-problem"></p>
+            <div id="generated-problem"></div> <!-- Changed to div for LaTex -->
         </div>
         <div id="response-container">
             <label for="user-response">Your Response:</label>
@@ -113,6 +117,7 @@
         $(document).ready(function() {
             $('#generateForm').on('submit', function(event) {
                 event.preventDefault();
+
                 $.ajax({
                     url: '/generate',
                     type: 'POST',
@@ -123,7 +128,8 @@
                     success: function(response) {
                         $('#problem-container').show();
                         $('#response-container').show();
-                        $('#generated-problem').text(response.response);
+                        $('#generated-problem').html(response.response);
+                        MathJax.typeset();
                     },
                     error: function(error) {
                         console.log(error);
@@ -140,7 +146,8 @@
                     data: { response: userResponse },
                     success: function(response) {
                         $('#feedback-container').show();
-                        $('#gpt-response').text(response.response);
+                        $('#gpt-response').html(response.response);
+                        MathJax.typeset(); // Rerender MathJax content
                     },
                     error: function(error) {
                         console.log(error);
@@ -151,15 +158,15 @@
             $('#next-question').on('click', function() {
                 $('#generateForm')[0].reset();
                 $('#problem-container, #response-container, #feedback-container').hide();
-                $('#user-response').val('');
                 $('#generated-problem, #gpt-response').text('');
+                $('#user-response').val('');
             });
 
             $('#back-button').on('click', function() {
                 $('#generateForm')[0].reset();
                 $('#problem-container, #response-container, #feedback-container').hide();
-                $('#user-response').val('');
                 $('#generated-problem, #gpt-response').text('');
+                $('#user-response').val('');
             });
         });
     </script>
