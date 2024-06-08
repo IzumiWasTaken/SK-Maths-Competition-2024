@@ -16,36 +16,36 @@ def trig_difficulty_easy():
     difficulty = "Easy"
     x = randrange(0, 2)
     if x == 0:
-        return "Create an algebraic equation about trigonometry for 7th grade students who have just begun understanding easy trigonometry, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create an algebraic equation about trigonometry for 7th grade students who have just begun understanding easy trigonometry, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
     else:
-        return "Create a word problem about trigonometry for 7th grade students who have just begun understanding easy trigonometry, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create a word problem about trigonometry for 7th grade students who have just begun understanding easy trigonometry, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
 
 def trig_difficulty_medium():
     topic = "Trig"
     difficulty = "Medium"
     x = randrange(0, 2)
     if x == 0:
-        return "Create an algebraic equation about trigonometry for 8th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create an algebraic equation about trigonometry for 8th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
     else:
-        return "Create a word problem about trigonometry for 8th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create a word problem about trigonometry for 8th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
 
 def trig_difficulty_hard():
     topic = "Trig"
     difficulty = "Hard"
     x = randrange(0, 2)
     if x == 0:
-        return "Create an algebraic equation about trigonometry for 9th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create an algebraic equation about trigonometry for 9th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
     else:
-        return "Create a word problem about trigonometry for 9th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create a word problem about trigonometry for 9th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
     
 def trig_difficulty_difficult():
     topic = "Trig"
     difficulty = "Difficult"
     x = randrange(0, 2)
     if x == 0:
-        return "Create an algebraic equation about trigonometry for 10th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create an algebraic equation about trigonometry for 10th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
     else:
-        return "Create a word problem about trigonometry for 10th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create a word problem about trigonometry for 10th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
 
 
 
@@ -55,36 +55,36 @@ def para_difficulty_easy():
     difficulty = "Easy"
     x = randrange(0, 2)
     if x == 0:
-        return "Create an algebraic equation about parabola for 7th grade students who have just begun understanding easy porabola, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create an algebraic equation about parabola for 7th grade students who have just begun understanding easy porabola, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
     else:
-        return "Create a word problem about parabola for 7th grade students who have just begun understanding easy parabola, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create a word problem about parabola for 7th grade students who have just begun understanding easy parabola, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
 
 def para_difficulty_medium():
     topic = "Para"
     difficulty = "Medium"
     x = randrange(0, 2)
     if x == 0:
-        return "Create an algebraic equation about parabole for 8th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create an algebraic equation about parabole for 8th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
     else:
-        return "Create a word problem about parabola for 8th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create a word problem about parabola for 8th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
 
 def para_difficulty_hard():
     topic = "Para"
     difficulty = "Hard"
     x = randrange(0, 2)
     if x == 0:
-        return "Create an algebraic equation about parabola for 9th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create an algebraic equation about parabola for 9th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
     else:
-        return "Create a word problem about parabola for 9th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create a word problem about parabola for 9th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
     
 def para_difficulty_difficult():
     topic = "Para"
     difficulty = "Difficult"
     x = randrange(0, 2)
     if x == 0:
-        return "Create an algebraic equation about parabola for 10th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create an algebraic equation about parabola for 10th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
     else:
-        return "Create a word problem about parabola for 10th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create a word problem about parabola for 10th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
 
 
 
@@ -94,36 +94,36 @@ def numbers_difficulty_easy():
     difficulty = "Easy"
     x = randrange(0, 2)
     if x == 0:
-        return "Create an algebraic equation about numbers for 7th grade students who have just begun understanding easy porabola, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create an algebraic equation about numbers for 7th grade students who have just begun understanding easy porabola, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
     else:
-        return "Create a word problem about numbers for 7th grade students who have just begun understanding easy parabola, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create a word problem about numbers for 7th grade students who have just begun understanding easy parabola, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
 
 def numbers_difficulty_medium():
     topic = "Numbers"
     difficulty = "Medium"
     x = randrange(0, 2)
     if x == 0:
-        return "Create an algebraic equation about numbers for 8th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create an algebraic equation about numbers for 8th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
     else:
-        return "Create a word problem about numbers for 8th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create a word problem about numbers for 8th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
 
 def numbers_difficulty_hard():
     topic = "Numbers"
     difficulty = "Hard"
     x = randrange(0, 2)
     if x == 0:
-        return "Create an algebraic equation about numbers for 9th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create an algebraic equation about numbers for 9th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
     else:
-        return "Create a word problem about numbers for 9th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create a word problem about numbers for 9th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
     
 def numbers_difficulty_difficult():
     topic = "Numbers"
     difficulty = "Difficult"
     x = randrange(0, 2)
     if x == 0:
-        return "Create an algebraic equation about numbers for 10th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create an algebraic equation about numbers for 10th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
     else:
-        return "Create a word problem about numbers for 10th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create a word problem about numbers for 10th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
 
 
 
@@ -132,36 +132,36 @@ def propor_difficulty_easy():
     difficulty = "Easy"
     x = randrange(0, 2)
     if x == 0:
-        return "Create an algebraic equation about direct and inverse proportions for 7th grade students who have just begun understanding easy porabola, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create an algebraic equation about direct and inverse proportions for 7th grade students who have just begun understanding easy porabola, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
     else:
-        return "Create a word problem about direct and inverse proportions for 7th grade students who have just begun understanding easy parabola, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create a word problem about direct and inverse proportions for 7th grade students who have just begun understanding easy parabola, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
 
 def propor_difficulty_medium():
     topic = "Prop"
     difficulty = "Medium"
     x = randrange(0, 2)
     if x == 0:
-        return "Create an algebraic equation about direct and inverse proportions for 8th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create an algebraic equation about direct and inverse proportions for 8th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
     else:
-        return "Create a word problem about direct and inverse proportions for 8th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create a word problem about direct and inverse proportions for 8th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
 
 def propor_difficulty_hard():
     topic = "Prop"
     difficulty = "Hard"
     x = randrange(0, 2)
     if x == 0:
-        return "Create an algebraic equation about direct and inverse proportions for 9th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create an algebraic equation about direct and inverse proportions for 9th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
     else:
-        return "Create a word problem about direct and inverse proportions for 9th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create a word problem about direct and inverse proportions for 9th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
     
 def propor_difficulty_difficult():
      topic = "Prop"
      difficulty = "Difficult"
      x = randrange(0, 2)
      if x == 0:
-        return "Create an algebraic equation about direct and inverse proportions for 10th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create an algebraic equation about direct and inverse proportions for 10th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
      else:
-        return "Create a word problem about direct and inverse proportions for 10th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create a word problem about direct and inverse proportions for 10th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
 
 
 
@@ -172,36 +172,36 @@ def matric_difficulty_easy():
     difficulty = "Easy"
     x = randrange(0, 2)
     if x == 0:
-        return "Create an algebraic equation about matrices for 7th grade students who have just begun understanding easy porabola, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create an algebraic equation about matrices for 7th grade students who have just begun understanding easy porabola, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
     else:
-        return "Create a word problem about matrices for 7th grade students who have just begun understanding easy parabola, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create a word problem about matrices for 7th grade students who have just begun understanding easy parabola, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
 
 def matric_difficulty_medium():
     topic = "Matrices"
     difficulty = "Medium"
     x = randrange(0, 2)
     if x == 0:
-        return "Create an algebraic equation about matrices for 8th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create an algebraic equation about matrices for 8th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
     else:
-        return "Create a word problem about matrices for 8th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create a word problem about matrices for 8th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
 
 def matric_difficulty_hard():
     topic = "Matrices"
     difficulty = "Hard"
     x = randrange(0, 2)
     if x == 0:
-        return "Create an algebraic equation about matrices for 9th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create an algebraic equation about matrices for 9th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
     else:
-        return "Create a word problem about matrices for 9th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create a word problem about matrices for 9th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
     
 def matric_difficulty_difficult():
      topic = "Matrices"
      difficulty = "Difficult"
      x = randrange(0, 2)
      if x == 0:
-        return "Create an algebraic equation about matrices for 10th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create an algebraic equation about matrices for 10th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
      else:
-        return "Create a word problem about maatrices for 10th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create a word problem about maatrices for 10th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
 
 
 
@@ -211,36 +211,36 @@ def inequalities_difficulty_easy():
     difficulty = "Easy"
     x = randrange(0, 2)
     if x == 0:
-        return "Create an algebraic equation about inequalities for 7th grade students who have just begun understanding easy porabola, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create an algebraic equation about inequalities for 7th grade students who have just begun understanding easy porabola, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
     else:
-        return "Create a word problem about inequalities for 7th grade students who have just begun understanding easy parabola, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create a word problem about inequalities for 7th grade students who have just begun understanding easy parabola, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
 
 def inequalities_difficulty_medium():
     topic = "Inequalities"
     difficulty = "Medium"
     x = randrange(0, 2)
     if x == 0:
-        return "Create an algebraic equation about inequalities for 8th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create an algebraic equation about inequalities for 8th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
     else:
-        return "Create a word problem about inequalities for 8th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create a word problem about inequalities for 8th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
 
 def inequalities_difficulty_hard():
     topic = "Inequalities"
     difficulty = "Hard"
     x = randrange(0, 2)
     if x == 0:
-        return "Create an algebraic equation about inequalities for 9th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create an algebraic equation about inequalities for 9th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
     else:
-        return "Create a word problem about inequalities for 9th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create a word problem about inequalities for 9th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
     
 def inequalities_difficulty_difficult():
      topic = "Inequalities"
      difficulty = "Difficult"
      x = randrange(0, 2)
      if x == 0:
-        return "Create an algebraic equation about inequalities for 10th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create an algebraic equation about inequalities for 10th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
      else:
-        return "Create a word problem about maatrices for inequalities for 10th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create a word problem about maatrices for inequalities for 10th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
 
 
 
@@ -250,36 +250,36 @@ def probabilities_difficulty_easy():
     difficulty = "Easy"
     x = randrange(0, 2)
     if x == 0:
-        return "Create an algebraic equation about probabilities for 7th grade students who have just begun understanding easy porabola, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create an algebraic equation about probabilities for 7th grade students who have just begun understanding easy porabola, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
     else:
-        return "Create a word problem about probabilities for 7th grade students who have just begun understanding easy parabola, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create a word problem about probabilities for 7th grade students who have just begun understanding easy parabola, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
 
 def probabilities_difficulty_medium():
     topic = "Probabilities"
     difficulty = "Medium"
     x = randrange(0, 2)
     if x == 0:
-        return "Create an algebraic equation about probabilities for 8th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create an algebraic equation about probabilities for 8th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
     else:
-        return "Create a word problem about probabilities for 8th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create a word problem about probabilities for 8th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
 
 def probabilities_difficulty_hard():
     topic = "Probabilities"
     difficulty = "Hard"
     x = randrange(0, 2)
     if x == 0:
-        return "Create an algebraic equation about probabilities for 9th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create an algebraic equation about probabilities for 9th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
     else:
-        return "Create a word problem about probabilities for 9th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create a word problem about probabilities for 9th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
     
 def probabilities_difficulty_difficult():
      topic = "Probabilities"
      difficulty = "Difficult"
      x = randrange(0, 2)
      if x == 0:
-        return "Create an algebraic equation about probabilities for 10th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create an algebraic equation about probabilities for 10th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
      else:
-        return "Create a word problem about maatrices for probabilities for 10th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create a word problem about maatrices for probabilities for 10th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
 
 
 
@@ -290,36 +290,36 @@ def Percentage_difficulty_easy():
     difficulty = "Easy"
     x = randrange(0, 2)
     if x == 0:
-        return "Create an algebraic equation about Percentage for 7th grade students who have just begun understanding easy porabola, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create an algebraic equation about Percentage for 7th grade students who have just begun understanding easy porabola, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
     else:
-        return "Create a word problem about Percentage for 7th grade students who have just begun understanding easy parabola, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create a word problem about Percentage for 7th grade students who have just begun understanding easy parabola, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
 
 def Percentage_difficulty_medium():
     topic = "Percentage"
     difficulty = "Medium"
     x = randrange(0, 2)
     if x == 0:
-        return "Create an algebraic equation about Percentage for 8th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create an algebraic equation about Percentage for 8th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
     else:
-        return "Create a word problem about Percentage for 8th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create a word problem about Percentage for 8th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
 
 def Percentage_difficulty_hard():
     topic = "Percentage"
     difficulty = "Hard"
     x = randrange(0, 2)
     if x == 0:
-        return "Create an algebraic equation about Percentage for 9th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create an algebraic equation about Percentage for 9th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
     else:
-        return "Create a word problem about Percentage for 9th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create a word problem about Percentage for 9th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
 
 def Percentage_difficulty_difficult():
      topic = "Percentage"
      difficulty = "Difficult"
      x = randrange(0, 2)
      if x == 0:
-        return "Create an algebraic equation about Percentage for 10th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create an algebraic equation about Percentage for 10th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
      else:
-        return "Create a word problem about maatrices for Percentage for 10th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create a word problem about maatrices for Percentage for 10th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
 
 
 
@@ -329,36 +329,36 @@ def Sequences_difficulty_easy():
     difficulty = "Easy"
     x = randrange(0, 2)
     if x == 0:
-        return "Create an algebraic equation about Number Sequences for 7th grade students who have just begun understanding easy porabola, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create an algebraic equation about Number Sequences for 7th grade students who have just begun understanding easy porabola, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
     else:
-        return "Create a word problem about Number Sequences for 7th grade students who have just begun understanding easy parabola, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create a word problem about Number Sequences for 7th grade students who have just begun understanding easy parabola, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
 
 def Sequences_difficulty_medium():
     topic = "Number Sequences"
     difficulty = "Medium"
     x = randrange(0, 2)
     if x == 0:
-        return "Create an algebraic equation about Number Sequences for 8th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create an algebraic equation about Number Sequences for 8th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
     else:
-        return "Create a word problem about Number Sequences for 8th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create a word problem about Number Sequences for 8th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
 
 def Sequences_difficulty_hard():
     topic = "Number Sequences"
     difficulty = "Hard"
     x = randrange(0, 2)
     if x == 0:
-        return "Create an algebraic equation about Number Sequences for 9th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create an algebraic equation about Number Sequences for 9th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
     else:
-        return "Create a word problem about Number Sequences for 9th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create a word problem about Number Sequences for 9th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
 
 def Sequences_difficulty_difficult():
      topic = "Number Sequences"
      difficulty = "Difficult"
      x = randrange(0, 2)
      if x == 0:
-        return "Create an algebraic equation about Number Sequences for 10th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create an algebraic equation about Number Sequences for 10th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
      else:
-        return "Create a word problem about maatrices for Number Sequences for 10th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create a word problem about maatrices for Number Sequences for 10th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
 
 
 
@@ -367,40 +367,40 @@ def ratio_difficulty_easy():
     difficulty = "Easy"
     x = randrange(0, 2)
     if x == 0:
-        return "Create an algebraic equation about ratio for 7th grade students who have just begun understanding easy porabola, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create an algebraic equation about ratio for 7th grade students who have just begun understanding easy porabola, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
     else:
-        return "Create a word problem about ratio for 7th grade students who have just begun understanding easy parabola, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create a word problem about ratio for 7th grade students who have just begun understanding easy parabola, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
 
 def ratio_difficulty_medium():
     topic = "Ratio"
     difficulty = "Medium"
     x = randrange(0, 2)
     if x == 0:
-        return "Create an algebraic equation about ratio for 8th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create an algebraic equation about ratio for 8th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
     else:
-        return "Create a word problem about Number ratio for 8th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create a word problem about Number ratio for 8th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
 
 def ratio_difficulty_hard():
     topic = "Ratio"
     difficulty = "Hard"
     x = randrange(0, 2)
     if x == 0:
-        return "Create an algebraic equation about ratio for 9th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create an algebraic equation about ratio for 9th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
     else:
-        return "Create a word problem about ratio for 9th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create a word problem about ratio for 9th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
 
 def ratio_difficulty_difficult():
      topic = "Ratio"
      difficulty = "Difficult"
      x = randrange(0, 2)
      if x == 0:
-        return "Create an algebraic equation about ratio for 10th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create an algebraic equation about ratio for 10th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
      else:
-        return "Create a word problem about maatrices for ratio for 10th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES."
+        return "Create a word problem about maatrices for ratio for 10th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
 
 @app.route('/')    
 def index():
-    return render_template('index.html')
+    return render_template('index2.html')
 
 @app.route('/generate', methods=['POST'])
 def generate():
@@ -537,7 +537,7 @@ def generate():
 
     try:
         response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo-16k",
+            model="gpt-4o",
             messages=conversation,
             temperature=1,
             max_tokens=256,
@@ -550,21 +550,30 @@ def generate():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
     
+def format_choices(question):
+    # Assuming choices are separated by semicolons
+    if "\n" in question:
+        parts = question.split('\n')
+        question_text = parts[0]
+        choices = parts[1:]
+        formatted_choices = '\n'.join(choices)
+        return f"{question_text}\n{formatted_choices}"
+    return question
 
 @app.route('/respond', methods=['POST'])
 def respond():
     global conversation, current_question
     
     user_response = request.form.get('response')
-
+    
     if not user_response:
         return jsonify({"error": "Response is required"}), 400
-    
+
     conversation.append({"role": "user", "content": f"Question: {current_question} Answer: {user_response}"})
 
     try:
         response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo-16k",
+            model="gpt-4o",
             messages=conversation,
             temperature=1,
             max_tokens=256,
@@ -573,8 +582,12 @@ def respond():
             presence_penalty=0
         )
         feedback = response['choices'][0]['message']['content']
+        
+        # Prepare for the next question
+        current_question = None
+        conversation = []
+
         return jsonify({"response": feedback})
-    
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
