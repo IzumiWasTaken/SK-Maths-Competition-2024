@@ -70,7 +70,7 @@
 <body>
     <div class="container">
         <h1>Math Question Generator</h1>
-        <form id="generateForm">
+        <form id="generateForm"> 
             <label for="topic">Choose a Topic:</label>
             <select id="topic" name="topic" required>
                 <option class="disabledclass" disabled selected value>Choose a Topic</option>
@@ -93,16 +93,18 @@
                 <option value="Hard">Hard</option>
                 <option value="Difficult">Difficult</option>
             </select>
-            <button type="submit">Generate Question</button>
+            <button id="Generate-Question" type="submit">Generate Question</button>
         </form>
         <div id="problem-container">
             <h2>Generated Problem:</h2>
             <div id="generated-problem"></div> <!-- Changed to div for LaTex -->
         </div>
         <div id="response-container">
-            <label for="user-response">Your Response:</label>
-            <input type="text" id="user-response" name="user-response">
-            <button id="submit-response">Submit Response</button>
+            <label for="user-response">Choices:</label>
+            <button id="choice_A" class="choice-button" value="A">Choice A</button>
+            <button id="choice_B" class="choice-button" value="B">Choice B</button>
+            <button id="choice_C" class="choice-button" value="C">Choice C</button>
+            <button id="choice_D" class="choice-button" value="D">Choice D</button>
         </div>
         <div id="feedback-container">
             <h2>Feedback:</h2>
@@ -137,6 +139,24 @@
                 });
             });
 
+            $('.choice-button').on('click', function(event) {
+                event.preventDefault();
+                var userResponse = $(this).val();
+                $.ajax({
+                    url: '/respond',
+                    type: 'POST',
+                    data: { response: userResponse },
+                    success: function(response) {
+                        $('#feedback-container').show();
+                        $('#gpt-response').html(response.response);
+                        MathJax.typeset(); // Rerender MathJax content
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });
+            });
+            
             $('#submit-response').on('click', function(event) {
                 event.preventDefault();
                 var userResponse = $('#user-response').val();
@@ -159,7 +179,8 @@
                 $('#generateForm')[0].reset();
                 $('#problem-container, #response-container, #feedback-container').hide();
                 $('#generated-problem, #gpt-response').text('');
-                $('#user-response').val('');
+                $('#choice_A, #choice_B, #choice_C, #choice_D').prop('disabled', false);
+                $('#generateForm').show();
             });
 
             $('#back-button').on('click', function() {
@@ -167,6 +188,14 @@
                 $('#problem-container, #response-container, #feedback-container').hide();
                 $('#generated-problem, #gpt-response').text('');
                 $('#user-response').val('');
+            });
+
+            $('#Generate-Question').on('click', function() {
+                $('#generateForm').hide();
+            });
+
+            $('#choice_A, #choice_B, #choice_C, #choice_D').on('click', function() {
+                $('#choice_A, #choice_B, #choice_C, #choice_D').prop('disabled', true);
             });
         });
     </script>
