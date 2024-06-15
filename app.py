@@ -10,6 +10,7 @@ user_input = None
 topic = None
 current_question = None
 conversation = []
+choice_A = []
 
 def trig_difficulty_easy():
     topic = "Trig"
@@ -400,7 +401,8 @@ def ratio_difficulty_difficult():
 
 @app.route('/')    
 def index():
-    return render_template('index2.html')
+    global choice_A
+    return render_template('index2.html', choice_A=choice_A)
 
 @app.route('/generate', methods=['POST'])
 def generate():
@@ -551,15 +553,21 @@ def generate():
         return jsonify({"error": str(e)}), 500
     
 def format_choices(question):
-    # Assuming choices are separated by semicolons
+    global choice_A
+    # Assuming choices are separated by front-slash n
     if "\n" in question:
         parts = question.split('\n')
         question_text = parts[0]
         choices = parts[1:]
         formatted_choices = '\n'.join(choices)
         return f"{question_text}\n{formatted_choices}"
+    if "A)" in question:
+        partsA = question.split('A)')
+        choicesA = partsA[1:]
+        formatted_choicesA = 'A)'.join(choicesA)
+        choice_A = "A)", formatted_choicesA
+        return f"A){formatted_choicesA}", choice_A
     return question
-
 @app.route('/respond', methods=['POST'])
 def respond():
     global conversation, current_question
@@ -590,6 +598,9 @@ def respond():
         return jsonify({"response": feedback})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
