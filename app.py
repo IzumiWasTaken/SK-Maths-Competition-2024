@@ -2,7 +2,7 @@ import openai
 from random import randrange
 from time import sleep
 from flask import Flask, render_template, request, jsonify
-openai.api_key = 'sk-proj-oBGiB1JdyO4aXOM3DM2MT3BlbkFJDIzdv21tBSwMptrL08es'
+openai.api_key = 
 
 app = Flask(__name__)
 
@@ -11,6 +11,7 @@ topic = None
 current_question = None
 conversation = []
 choice_A = []
+Correct = []
 
 def trig_difficulty_easy():
     topic = "Trig"
@@ -401,8 +402,8 @@ def ratio_difficulty_difficult():
 
 @app.route('/')    
 def index():
-    global choice_A
-    return render_template('index2.html', choice_A=choice_A)
+    global Correct
+    return render_template('index2.html', Correct=Correct)
 
 @app.route('/generate', methods=['POST'])
 def generate():
@@ -561,12 +562,6 @@ def format_choices(question):
         choices = parts[1:]
         formatted_choices = '\n'.join(choices)
         return f"{question_text}\n{formatted_choices}"
-    if "A)" in question:
-        partsA = question.split('A)')
-        choicesA = partsA[1:]
-        formatted_choicesA = 'A)'.join(choicesA)
-        choice_A = "A)", formatted_choicesA
-        return f"A){formatted_choicesA}", choice_A
     return question
 @app.route('/respond', methods=['POST'])
 def respond():
@@ -598,9 +593,6 @@ def respond():
         return jsonify({"response": feedback})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-
-
-
 
 if __name__ == '__main__':
     app.run(debug=True)
