@@ -27,7 +27,7 @@
             text-align: center;
             width: 80%;
             max-width: 600px;
-            position: relative; /* Adjusted for the loader's positioning */
+            position: relative;
         }
         h1 {
             color: #333;
@@ -63,7 +63,6 @@
             font-size: 1.2em;
             color: #555;
         }
-        /* Loader styles */
         .loader {
             width: 48px;
             height: 48px;
@@ -85,8 +84,8 @@
               linear-gradient(#000 0 0);
             mask-composite: exclude;
             animation: l5 1.5s infinite;
-            display: none; /* Hide initially */
-            position: absolute; /* In the white container */
+            display: none;
+            position: absolute;
             margin: auto;
             top: 50%;
             left: 47%;
@@ -223,7 +222,6 @@
                 event.preventDefault();
                 var userResponse = $(this).val();
                 var buttonClicked = $(this);
-                console.log("Button clicked: " + userResponse);
                 $.ajax({
                     url: '/respond',
                     type: 'POST',
@@ -234,19 +232,14 @@
                         $('#gpt-response').html(response.response);
                         MathJax.typeset(); // Rerender MathJax content
 
-                        console.log('Response correct: ' + !response.correct);
-
                         // Add or remove classes based on the response.correct value
-                        if (Correct = false) {
-                            buttonClicked.addClass('button_wrong');
-                        } 
-                        if (Correct = true) {
-                            buttonClicked.addClass('button_right');
+                        if (response.correct) {
+                            buttonClicked.AddClass('button_correct');
+                        } else {
+                            buttonClicked.AddClass('button_wrong');
                         }
-                            
                         // Disable all buttons
                         $('.choice-button').prop('disabled', true);
-                        $('.response').val();
                     },
                     error: function(error) {
                         $('#loader').hide();
@@ -259,9 +252,7 @@
                 $('#generateForm')[0].reset();
                 $('#problem-container, #response-container, #feedback-container').hide();
                 $('#generated-problem, #gpt-response').text('');
-                $('.choice-button').removeClass('button_correct').prop('disabled', false);
-                $('.choice-button').removeClass('button_wrong').prop('disabled', false);
-                
+                $('.choice-button').css('background-color', '#0077B6').prop('disabled', false);
                 $('#generateForm').show();
             });
 
