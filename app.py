@@ -2,7 +2,7 @@ import openai
 from random import randrange
 from time import sleep
 from flask import Flask, render_template, request, jsonify
-openai.api_key = 
+openai.api_key = 'sk-proj-oBGiB1JdyO4aXOM3DM2MT3BlbkFJDIzdv21tBSwMptrL08es'
 
 app = Flask(__name__)
 
@@ -10,8 +10,7 @@ user_input = None
 topic = None
 current_question = None
 conversation = []
-choice_A = []
-Correct = []
+Correct = None
 
 def trig_difficulty_easy():
     topic = "Trig"
@@ -554,7 +553,6 @@ def generate():
         return jsonify({"error": str(e)}), 500
     
 def format_choices(question):
-    global choice_A
     # Assuming choices are separated by front-slash n
     if "\n" in question:
         parts = question.split('\n')
@@ -563,6 +561,15 @@ def format_choices(question):
         formatted_choices = '\n'.join(choices)
         return f"{question_text}\n{formatted_choices}"
     return question
+
+def correct_answer(feedback):
+    global Correct
+    if "incorrect" in feedback.lower() or "wrong" in feedback.lower():
+        Correct = 0
+    elif "incorrect" not in feedback.lower() or "wrong" not in feedback.lower():
+        Correct = 1
+    return Correct, feedback
+
 @app.route('/respond', methods=['POST'])
 def respond():
     global conversation, current_question
@@ -593,6 +600,5 @@ def respond():
         return jsonify({"response": feedback})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-
 if __name__ == '__main__':
     app.run(debug=True)
