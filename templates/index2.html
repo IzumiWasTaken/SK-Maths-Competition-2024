@@ -26,6 +26,7 @@
             text-align: center;
             width: 80%;
             max-width: 600px;
+            position: relative; /* Adjusted for the loader's positioning */
         }
         h1 {
             color: #333;
@@ -60,7 +61,85 @@
         #generated-problem, #gpt-response {
             font-size: 1.2em;
             color: #555;
-            white-space: pre-line; /* Ensures line breaks are preserved */
+        }
+
+        /* HTML: <div class="loader"></div> */
+        .loader {
+            width: 48px;
+            height: 48px;
+            background: #3FD97F;
+            --c: no-repeat linear-gradient(#000 0 0);
+            --s: 18px 18px;
+            -webkit-mask:
+              var(--c) left 4px top 4px,
+              var(--c) right 4px top 4px,
+              var(--c) right 4px bottom 4px,
+              var(--c) left 4px bottom 4px,
+              linear-gradient(#000 0 0);
+            -webkit-mask-composite: xor;
+            mask:
+              var(--c) left 4px top 4px,
+              var(--c) right 4px top 4px,
+              var(--c) right 4px bottom 4px,
+              var(--c) left 4px bottom 4px,
+              linear-gradient(#000 0 0);
+            mask-composite: exclude;
+            animation: l5 1.5s infinite;
+            display: none; /* Hide initially */
+            position: absolute; /* In the white container */
+            margin: auto;
+            top: 50%;
+            left: 47%;
+          }
+          @keyframes l5 {
+            0%    { 
+              -webkit-mask-size: 0 0, 0 0, 0 0, 0 0, auto; 
+              mask-size: 0 0, 0 0, 0 0, 0 0, auto;
+            }
+            12.5% { 
+              -webkit-mask-size: var(--s), 0 0, 0 0, 0 0, auto; 
+              mask-size: var(--s), 0 0, 0 0, 0 0, auto;
+            }
+            25%   { 
+              -webkit-mask-size: var(--s), var(--s), 0 0, 0 0, auto; 
+              mask-size: var(--s), var(--s), 0 0, 0 0, auto;
+            }
+            37.5% { 
+              -webkit-mask-size: var(--s), var(--s), var(--s), 0 0, auto; 
+              mask-size: var(--s), var(--s), var(--s), 0 0, auto;
+            }
+            50%   { 
+              -webkit-mask-size: var(--s), var(--s), var(--s), var(--s), auto; 
+              mask-size: var(--s), var(--s), var(--s), var(--s), auto;
+            }
+            62.5% { 
+              -webkit-mask-size: 0 0, var(--s), var(--s), var(--s), auto; 
+              mask-size: 0 0, var(--s), var(--s), var(--s), auto;
+            }
+            75%   { 
+              -webkit-mask-size: 0 0, 0 0, var(--s), var(--s), auto; 
+              mask-size: 0 0, 0 0, var(--s), var(--s), auto;
+            }
+            87.5% { 
+              -webkit-mask-size: 0 0, 0 0, 0 0, var(--s), auto; 
+              mask-size: 0 0, 0 0, 0 0, var(--s), auto;
+            }
+            100%  { 
+              -webkit-mask-size: 0 0, 0 0, 0 0, 0 0, auto; 
+              mask-size: 0 0, 0 0, 0 0, 0 0, auto;
+            }
+          }
+        button_correct {
+            background-color: #69cf84;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button_wrong {
+            background-color: #b82323;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
         }
     </style>
     <!-- Include MathJax -->
@@ -95,6 +174,8 @@
             </select>
             <button id="Generate-Question" type="submit">Generate Question</button>
         </form>
+        <br><br><br><br>
+        <div class="loader" id="loader"></div>
         <div id="problem-container">
             <h2>Generated Problem:</h2>
             <div id="generated-problem"></div> <!-- Changed to div for LaTex -->
@@ -119,6 +200,7 @@
         $(document).ready(function() {
             $('#generateForm').on('submit', function(event) {
                 event.preventDefault();
+                $('#loader').show();
 
                 $.ajax({
                     url: '/generate',
@@ -128,12 +210,14 @@
                         difficulty: $('#difficulty').val() 
                     },
                     success: function(response) {
+                        $('#loader').hide();
                         $('#problem-container').show();
                         $('#response-container').show();
                         $('#generated-problem').html(response.response);
                         MathJax.typeset();
                     },
                     error: function(error) {
+                        $('#loader').hide();
                         console.log(error);
                     }
                 });
@@ -147,11 +231,13 @@
                     type: 'POST',
                     data: { response: userResponse },
                     success: function(response) {
+                        $('#loader').hide();
                         $('#feedback-container').show();
                         $('#gpt-response').html(response.response);
                         MathJax.typeset(); // Rerender MathJax content
                     },
                     error: function(error) {
+                        $('#loader').hide();
                         console.log(error);
                     }
                 });
@@ -159,6 +245,7 @@
             
             $('#submit-response').on('click', function(event) {
                 event.preventDefault();
+                $('#loader').hide();
                 var userResponse = $('#user-response').val();
                 $.ajax({
                     url: '/respond',
@@ -170,17 +257,50 @@
                         MathJax.typeset(); // Rerender MathJax content
                     },
                     error: function(error) {
+                        $('#loader').hide(); 
                         console.log(error);
                     }
                 });
             });
-
+            $('#choice_A, #choice_B, #choice_C, #choice_D').on('click', function() {
+                if (Correct = false) {
+                    $('#choice_A').on('click', function() {
+                        $('#choice_A').css('background-color', '#b82323')
+                    });
+                    $('#choice_B').on('click', function() {
+                        $('#choice_B').css('background-color', '#b82323')
+                    });
+                    $('#choice_C').on('click', function() {
+                        $('#choice_C').css('background-color', '#b82323')
+                    });
+                    $('#choice_D').on('click', function() {
+                        $('#choice_D').css('background-color', '#b82323')
+                    });
+                }
+                else {
+                    $('#choice_A').on('click', function() {
+                        $('#choice_A').css('background-color', '#69cf84')
+                    });
+                    $('#choice_B').on('click', function() {
+                        $('#choice_B').css('background-color', '#69cf84')
+                    });
+                    $('#choice_C').on('click', function() {
+                        $('#choice_C').css('background-color', '#69cf84')
+                    });
+                    $('#choice_D').on('click', function() {
+                        $('#choice_D').css('background-color', '#69cf84')
+                    });
+                }
+                $('#choice_A, #choice_B, #choice_C, #choice_D').prop('disabled', true);
+            });
+            
             $('#next-question').on('click', function() {
                 $('#generateForm')[0].reset();
                 $('#problem-container, #response-container, #feedback-container').hide();
                 $('#generated-problem, #gpt-response').text('');
                 $('#choice_A, #choice_B, #choice_C, #choice_D').prop('disabled', false);
                 $('#generateForm').show();
+                $('#choice_A, #choice_B, #choice_C, #choice_D').css('background-color', '#0077B6');
             });
 
             $('#back-button').on('click', function() {
@@ -192,10 +312,6 @@
 
             $('#Generate-Question').on('click', function() {
                 $('#generateForm').hide();
-            });
-
-            $('#choice_A, #choice_B, #choice_C, #choice_D').on('click', function() {
-                $('#choice_A, #choice_B, #choice_C, #choice_D').prop('disabled', true);
             });
         });
     </script>
