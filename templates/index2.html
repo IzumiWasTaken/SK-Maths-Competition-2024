@@ -17,6 +17,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            padding: 0;
         }
         .container {
             background-color: #fff;
@@ -62,8 +63,7 @@
             font-size: 1.2em;
             color: #555;
         }
-
-        /* HTML: <div class="loader"></div> */
+        /* Loader styles */
         .loader {
             width: 48px;
             height: 48px;
@@ -90,8 +90,8 @@
             margin: auto;
             top: 50%;
             left: 47%;
-          }
-          @keyframes l5 {
+        }
+        @keyframes l5 {
             0%    { 
               -webkit-mask-size: 0 0, 0 0, 0 0, 0 0, auto; 
               mask-size: 0 0, 0 0, 0 0, 0 0, auto;
@@ -128,18 +128,14 @@
               -webkit-mask-size: 0 0, 0 0, 0 0, 0 0, auto; 
               mask-size: 0 0, 0 0, 0 0, 0 0, auto;
             }
-          }
-        button_correct {
+        }
+        .button_correct {
             background-color: #69cf84;
             color: #fff;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
         }
-        button_wrong {
+        .button_wrong {
             background-color: #b82323;
             color: #fff;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
         }
     </style>
     <!-- Include MathJax -->
@@ -226,6 +222,8 @@
             $('.choice-button').on('click', function(event) {
                 event.preventDefault();
                 var userResponse = $(this).val();
+                var buttonClicked = $(this);
+                console.log("Button clicked: " + userResponse);
                 $.ajax({
                     url: '/respond',
                     type: 'POST',
@@ -235,6 +233,20 @@
                         $('#feedback-container').show();
                         $('#gpt-response').html(response.response);
                         MathJax.typeset(); // Rerender MathJax content
+
+                        console.log('Response correct: ' + !response.correct);
+
+                        // Add or remove classes based on the response.correct value
+                        if (Correct = false) {
+                            buttonClicked.addClass('button_wrong');
+                        } 
+                        if (Correct = true) {
+                            buttonClicked.addClass('button_right');
+                        }
+                            
+                        // Disable all buttons
+                        $('.choice-button').prop('disabled', true);
+                        $('.response').val();
                     },
                     error: function(error) {
                         $('#loader').hide();
@@ -242,72 +254,21 @@
                     }
                 });
             });
-            
-            $('#submit-response').on('click', function(event) {
-                event.preventDefault();
-                $('#loader').hide();
-                var userResponse = $('#user-response').val();
-                $.ajax({
-                    url: '/respond',
-                    type: 'POST',
-                    data: { response: userResponse },
-                    success: function(response) {
-                        $('#feedback-container').show();
-                        $('#gpt-response').html(response.response);
-                        MathJax.typeset(); // Rerender MathJax content
-                    },
-                    error: function(error) {
-                        $('#loader').hide(); 
-                        console.log(error);
-                    }
-                });
-            });
-            $('#choice_A, #choice_B, #choice_C, #choice_D').on('click', function() {
-                if (Correct = false) {
-                    $('#choice_A').on('click', function() {
-                        $('#choice_A').css('background-color', '#b82323')
-                    });
-                    $('#choice_B').on('click', function() {
-                        $('#choice_B').css('background-color', '#b82323')
-                    });
-                    $('#choice_C').on('click', function() {
-                        $('#choice_C').css('background-color', '#b82323')
-                    });
-                    $('#choice_D').on('click', function() {
-                        $('#choice_D').css('background-color', '#b82323')
-                    });
-                }
-                else {
-                    $('#choice_A').on('click', function() {
-                        $('#choice_A').css('background-color', '#69cf84')
-                    });
-                    $('#choice_B').on('click', function() {
-                        $('#choice_B').css('background-color', '#69cf84')
-                    });
-                    $('#choice_C').on('click', function() {
-                        $('#choice_C').css('background-color', '#69cf84')
-                    });
-                    $('#choice_D').on('click', function() {
-                        $('#choice_D').css('background-color', '#69cf84')
-                    });
-                }
-                $('#choice_A, #choice_B, #choice_C, #choice_D').prop('disabled', true);
-            });
-            
+
             $('#next-question').on('click', function() {
                 $('#generateForm')[0].reset();
                 $('#problem-container, #response-container, #feedback-container').hide();
                 $('#generated-problem, #gpt-response').text('');
-                $('#choice_A, #choice_B, #choice_C, #choice_D').prop('disabled', false);
+                $('.choice-button').removeClass('button_correct').prop('disabled', false);
+                $('.choice-button').removeClass('button_wrong').prop('disabled', false);
+                
                 $('#generateForm').show();
-                $('#choice_A, #choice_B, #choice_C, #choice_D').css('background-color', '#0077B6');
             });
 
             $('#back-button').on('click', function() {
                 $('#generateForm')[0].reset();
                 $('#problem-container, #response-container, #feedback-container').hide();
                 $('#generated-problem, #gpt-response').text('');
-                $('#user-response').val('');
             });
 
             $('#Generate-Question').on('click', function() {
