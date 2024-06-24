@@ -2,7 +2,7 @@ import openai
 from random import randrange
 from time import sleep
 from flask import Flask, render_template, request, jsonify
-openai.api_key = ''
+openai.api_key = 'sk-proj-oBGiB1JdyO4aXOM3DM2MT3BlbkFJDIzdv21tBSwMptrL08es'
 
 app = Flask(__name__)
 
@@ -562,13 +562,13 @@ def format_choices(question):
         return f"{question_text}\n{formatted_choices}"
     return question
 
-def correct_answer(feedback):
-    global Correct
-    if "incorrect" in feedback.lower() or "wrong" in feedback.lower():
-        Correct = 0
-    elif "incorrect" not in feedback.lower() or "wrong" not in feedback.lower():
-        Correct = 1
-    return Correct, feedback
+# def correct_answer(feedback):
+#     global Correct
+#     if "incorrect" in feedback.lower() or "wrong" in feedback.lower():
+#         Correct = 0
+#     elif "incorrect" not in feedback.lower() or "wrong" not in feedback.lower():
+#         Correct = 1
+#     return Correct, feedback
 
 @app.route('/respond', methods=['POST'])
 def respond():
