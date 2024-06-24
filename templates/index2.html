@@ -233,13 +233,15 @@
                         MathJax.typeset(); // Rerender MathJax content
 
                         // Add or remove classes based on the response.correct value
-                        if (response.correct) {
-                            buttonClicked.AddClass('button_correct');
-                        } else {
-                            buttonClicked.AddClass('button_wrong');
-                        }
+                       // if (response.correct === 1) {
+                           // buttonClicked.addClass('button_correct');
+                       // } else {
+                           // buttonClicked.addClass('button_wrong');
+                       // }
                         // Disable all buttons
                         $('.choice-button').prop('disabled', true);
+                        $('.response').val('');
+                        $('.correct').val('');
                     },
                     error: function(error) {
                         $('#loader').hide();
@@ -252,7 +254,10 @@
                 $('#generateForm')[0].reset();
                 $('#problem-container, #response-container, #feedback-container').hide();
                 $('#generated-problem, #gpt-response').text('');
-                $('.choice-button').css('background-color', '#0077B6').prop('disabled', false);
+                $('.choice-button').removeClass('button_correct')
+                $('.choice-button').prop('disabled', false);
+                $('.choice-button').removeClass('button_wrong')
+                $('.choice-button').prop('disabled', false);
                 $('#generateForm').show();
             });
 
@@ -265,6 +270,98 @@
             $('#Generate-Question').on('click', function() {
                 $('#generateForm').hide();
             });
+        });
+
+        $('#choice_A').click(function() {
+            setTimeout(function() {
+                // Retrieve the combined text content from the container
+                var text = $('#feedback-container').text().toLowerCase().trim();
+    
+                // Check for "incorrect" or "wrong" first
+                if (text.includes("incorrect") || text.includes("wrong")) {
+                    // Change the button color to red and display an alert
+                    $('#choice_A').addClass('button_wrong');
+                }
+                // If "incorrect" or "wrong" is not found, check for "correct"
+                else if (text.includes("correct")) {
+                    // Change the button color to green and display an alert
+                    $('#choice_A').addClass('button_correct');
+                }
+                // If none of the keywords are found
+                else {
+                    // Reset the button color and display the detected text
+                    $('#choice_A').css('background-color', '');
+                }
+            }, 1500); // 1500 milliseconds = 1.5 seconds
+        });
+    
+        $('#choice_B').click(function() {
+            setTimeout(function() {
+                // Retrieve the combined text content from the container
+                var text = $('#feedback-container').text().toLowerCase().trim();
+    
+                // Check for "incorrect" or "wrong" first
+                if (text.includes("incorrect") || text.includes("wrong")) {
+                    // Change the button color to red and display an alert
+                    $('#choice_B').addClass('button_wrong');
+                }
+                // If "incorrect" or "wrong" is not found, check for "correct"
+                else if (text.includes("correct")) {
+                    // Change the button color to green and display an alert
+                    $('#choice_B').addClass('button_correct');
+                }
+                // If none of the keywords are found
+                else {
+                    // Reset the button color and display the detected text
+                    $('#choice_B').css('background-color', '');
+                }
+            }, 1500); // 1500 milliseconds = 1.5 seconds
+        });
+    
+        $('#choice_C').click(function() {
+            setTimeout(function() {
+                // Retrieve the combined text content from the container
+                var text = $('#feedback-container').text().toLowerCase().trim();
+    
+                // Check for "incorrect" or "wrong" first
+                if (text.includes("incorrect") || text.includes("wrong")) {
+                    // Change the button color to red and display an alert
+                    $('#choice_C').addClass('button_wrong');
+                }
+                // If "incorrect" or "wrong" is not found, check for "correct"
+                else if (text.includes("correct")) {
+                    // Change the button color to green and display an alert
+                    $('#choice_C').addClass('button_correct');
+                }
+                // If none of the keywords are found
+                else {
+                    // Reset the button color and display the detected text
+                    $('#choice_C').css('background-color', '');
+                }
+            }, 1500); // 1500 milliseconds = 1.5 seconds
+        });
+
+        $('#choice_D').click(function() {
+            setTimeout(function() {
+                // Retrieve the combined text content from the container
+                var text = $('#feedback-container').text().toLowerCase().trim();
+    
+                // Check for "incorrect" or "wrong" first
+                if (text.includes("incorrect") || text.includes("wrong")) {
+                    // Change the button color to red and display an alert
+                    $('#choice_D').addClass('button_wrong');
+                }
+                // If "incorrect" or "wrong" is not found, check for "correct"
+                else if (text.includes("correct")) {
+                    // Change the button color to green and display an alert
+                    $('#choice_D').addClass('button_correct');
+                }
+                // If none of the keywords are found
+                else {
+                    // Reset the button color and display the detected text
+                    $('#choice_D').css('background-color', '');
+                }
+            }, 1500); // 1500 milliseconds = 1.5 seconds
         });
     </script>
 </body>
