@@ -29,6 +29,17 @@
             max-width: 600px;
             position: relative;
         }
+        #coins {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            background-color: white;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
         h1 {
             color: #333;
         }
@@ -188,10 +199,14 @@
             <button id="next-question">Next Question</button>
             <button id="back-button">Back</button>
         </div>
+        <div id="coins-container" class="coins">
+            <p>Coins: 0</p>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
+        let Coins = 0;
         $(document).ready(function() {
             $('#generateForm').on('submit', function(event) {
                 event.preventDefault();
@@ -249,6 +264,8 @@
                     }
                 });
             });
+            var BrowserName = obgbrowserName;
+            document.getElementById('coins-container').innerHTML = BrowserName;
 
             $('#next-question').on('click', function() {
                 $('#generateForm')[0].reset();
@@ -286,6 +303,9 @@
                 else if (text.includes("correct")) {
                     // Change the button color to green and display an alert
                     $('#choice_A').addClass('button_correct');
+                    Coins += 1;
+                    document.getElementById('coin-counter').textContent = `Coins = ${Coins}`;
+                    alert(Coins);
                 }
                 // If none of the keywords are found
                 else {
@@ -363,6 +383,7 @@
                 }
             }, 1500); // 1500 milliseconds = 1.5 seconds
         });
+
     </script>
 </body>
 </html>
