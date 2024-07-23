@@ -1,4 +1,4 @@
-import openai
+import openai#Use to connect
 from random import randrange
 from time import sleep
 from flask import Flask, render_template, request, jsonify
@@ -602,3 +602,9 @@ def respond():
         return jsonify({"error": str(e)}), 500
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+
+
+
+
