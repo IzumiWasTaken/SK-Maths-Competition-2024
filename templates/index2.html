@@ -231,7 +231,7 @@
                     error: function(error) {
                         $('#loader').hide();
                         console.log(error);
-                        alert("Massive Error: I sincerely apologize if this shows up during the competition.x");
+                        alert("Massive Error: I sincerely apologize if this shows up during the competition.");
                     }
                 });
             });
@@ -288,7 +288,18 @@
                         $('#choice_A').addClass('button_wrong');
                     } else if (text.includes("correct") || text.includes("true")) {
                         $('#choice_A').addClass('button_correct');
-                        coins++;
+                        if (difficulty == "Easy") {
+                            coins++;
+                        }
+                        if (difficulty == "Medium") {
+                            coins+=5;
+                        }
+                        if (difficulty == "Hard") {
+                            coins+=10;
+                        }
+                        if (difficulty == "Difficult") {
+                            coins+=20;
+                        }
                         $('#coinCounter').text('Coins: ' + coins);
                     } else {
                         $('#choice_A').css('background-color', '');
@@ -304,7 +315,18 @@
                         $('#choice_B').addClass('button_wrong');
                     } else if (text.includes("correct") || text.includes("true")) {
                         $('#choice_B').addClass('button_correct');
-                        coins++;
+                        if (difficulty == "Easy") {
+                            coins++;
+                        }
+                        if (difficulty == "Medium") {
+                            coins+=5;
+                        }
+                        if (difficulty == "Hard") {
+                            coins+=10;
+                        }
+                        if (difficulty == "Difficult") {
+                            coins+=20;
+                        }
                         $('#coinCounter').text('Coins: ' + coins);
                     } else {
                         $('#choice_B').css('background-color', '');
@@ -320,7 +342,18 @@
                         $('#choice_C').addClass('button_wrong');
                     } else if (text.includes("correct") || text.includes("true")) {
                         $('#choice_C').addClass('button_correct');
-                        coins++;
+                        if (difficulty == "Easy") {
+                            coins++;
+                        }
+                        if (difficulty == "Medium") {
+                            coins+=5;
+                        }
+                        if (difficulty == "Hard") {
+                            coins+=10;
+                        }
+                        if (difficulty == "Difficult") {
+                            coins+=20;
+                        }
                         $('#coinCounter').text('Coins: ' + coins);
                     } else {
                         $('#choice_C').css('background-color', '');
@@ -336,7 +369,18 @@
                         $('#choice_D').addClass('button_wrong');
                     } else if (text.includes("correct") || text.includes("true")) {
                         $('#choice_D').addClass('button_correct');
-                        coins++;
+                        if (difficulty == "Easy") {
+                            coins++;
+                        }
+                        if (difficulty == "Medium") {
+                            coins+=5;
+                        }
+                        if (difficulty == "Hard") {
+                            coins+=10;
+                        }
+                        if (difficulty == "Difficult") {
+                            coins+=20;
+                        }
                         $('#coinCounter').text('Coins: ' + coins);
                     } else {
                         $('#choice_D').css('background-color', '');
