@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +15,7 @@
             background-color: #FFFFED;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             height: 100vh;
             margin: 0;
             padding: 0;
@@ -28,6 +29,29 @@
             width: 80%;
             max-width: 600px;
             position: relative;
+            margin-top: 20px;
+        }
+        .coin-counter {
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+            transform: translateY(-50%);
+            background-color: #0077B6;
+            color: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .coin-center {
+            display: inline-block;
+            margin-top: auto;
+            margin-bottom: auto;
+            vertical-align: middle;
+        }
+        #coinCounter {
+            vertical-align: middle;
         }
         h1 {
             color: #333;
@@ -177,10 +201,10 @@
         </div>
         <div id="response-container">
             <label for="user-response">Choices:</label>
-            <button id="choice_A" class="choice-button" value="A">Choice A</button>
-            <button id="choice_B" class="choice-button" value="B">Choice B</button>
-            <button id="choice_C" class="choice-button" value="C">Choice C</button>
-            <button id="choice_D" class="choice-button" value="D">Choice D</button>
+            <button id="choice_A" class="choice-button" value="I choose choice A.">Choice A</button>
+            <button id="choice_B" class="choice-button" value="I choose choice B.">Choice B</button>
+            <button id="choice_C" class="choice-button" value="I choose choice C.">Choice C</button>
+            <button id="choice_D" class="choice-button" value="I choose choice D.">Choice D</button>
         </div>
         <div id="feedback-container">
             <h2>Feedback:</h2>
@@ -188,15 +212,21 @@
             <button id="next-question">Next Question</button>
             <button id="back-button">Back</button>
         </div>
+        <div class="coin-counter">
+            <img src = 'https://static-00.iconduck.com/assets.00/gold-coin-icon-512x512-ehq45y6s.png' width = 30, height = 30, class="coin-center">
+            <div class = "coin-center" id="coinCounter">Coins: 0
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {
+            let coins = 0; // Declare the coins variable here
+        
             $('#generateForm').on('submit', function(event) {
                 event.preventDefault();
                 $('#loader').show();
-
+        
                 $.ajax({
                     url: '/generate',
                     type: 'POST',
@@ -214,10 +244,11 @@
                     error: function(error) {
                         $('#loader').hide();
                         console.log(error);
+                        alert("Massive Error: I sincerely apologize if this shows up during the competition.");
                     }
                 });
             });
-
+        
             $('.choice-button').on('click', function(event) {
                 event.preventDefault();
                 var userResponse = $(this).val();
@@ -231,13 +262,7 @@
                         $('#feedback-container').show();
                         $('#gpt-response').html(response.response);
                         MathJax.typeset(); // Rerender MathJax content
-
-                        // Add or remove classes based on the response.correct value
-                       // if (response.correct === 1) {
-                           // buttonClicked.addClass('button_correct');
-                       // } else {
-                           // buttonClicked.addClass('button_wrong');
-                       // }
+        
                         // Disable all buttons
                         $('.choice-button').prop('disabled', true);
                         $('.response').val('');
@@ -249,119 +274,132 @@
                     }
                 });
             });
-
+        
             $('#next-question').on('click', function() {
                 $('#generateForm')[0].reset();
                 $('#problem-container, #response-container, #feedback-container').hide();
                 $('#generated-problem, #gpt-response').text('');
-                $('.choice-button').removeClass('button_correct')
-                $('.choice-button').prop('disabled', false);
-                $('.choice-button').removeClass('button_wrong')
-                $('.choice-button').prop('disabled', false);
+                $('.choice-button').removeClass('button_correct button_wrong').prop('disabled', false);
                 $('#generateForm').show();
             });
-
+        
             $('#back-button').on('click', function() {
                 $('#generateForm')[0].reset();
                 $('#problem-container, #response-container, #feedback-container').hide();
                 $('#generated-problem, #gpt-response').text('');
             });
-
+        
             $('#Generate-Question').on('click', function() {
                 $('#generateForm').hide();
             });
-        });
 
-        $('#choice_A').click(function() {
-            setTimeout(function() {
-                // Retrieve the combined text content from the container
-                var text = $('#feedback-container').text().toLowerCase().trim();
-    
-                // Check for "incorrect" or "wrong" first
-                if (text.includes("incorrect") || text.includes("wrong")) {
-                    // Change the button color to red and display an alert
-                    $('#choice_A').addClass('button_wrong');
-                }
-                // If "incorrect" or "wrong" is not found, check for "correct"
-                else if (text.includes("correct")) {
-                    // Change the button color to green and display an alert
-                    $('#choice_A').addClass('button_correct');
-                }
-                // If none of the keywords are found
-                else {
-                    // Reset the button color and display the detected text
-                    $('#choice_A').css('background-color', '');
-                }
-            }, 1500); // 1500 milliseconds = 1.5 seconds
-        });
-    
-        $('#choice_B').click(function() {
-            setTimeout(function() {
-                // Retrieve the combined text content from the container
-                var text = $('#feedback-container').text().toLowerCase().trim();
-    
-                // Check for "incorrect" or "wrong" first
-                if (text.includes("incorrect") || text.includes("wrong")) {
-                    // Change the button color to red and display an alert
-                    $('#choice_B').addClass('button_wrong');
-                }
-                // If "incorrect" or "wrong" is not found, check for "correct"
-                else if (text.includes("correct")) {
-                    // Change the button color to green and display an alert
-                    $('#choice_B').addClass('button_correct');
-                }
-                // If none of the keywords are found
-                else {
-                    // Reset the button color and display the detected text
-                    $('#choice_B').css('background-color', '');
-                }
-            }, 1500); // 1500 milliseconds = 1.5 seconds
-        });
-    
-        $('#choice_C').click(function() {
-            setTimeout(function() {
-                // Retrieve the combined text content from the container
-                var text = $('#feedback-container').text().toLowerCase().trim();
-    
-                // Check for "incorrect" or "wrong" first
-                if (text.includes("incorrect") || text.includes("wrong")) {
-                    // Change the button color to red and display an alert
-                    $('#choice_C').addClass('button_wrong');
-                }
-                // If "incorrect" or "wrong" is not found, check for "correct"
-                else if (text.includes("correct")) {
-                    // Change the button color to green and display an alert
-                    $('#choice_C').addClass('button_correct');
-                }
-                // If none of the keywords are found
-                else {
-                    // Reset the button color and display the detected text
-                    $('#choice_C').css('background-color', '');
-                }
-            }, 1500); // 1500 milliseconds = 1.5 seconds
-        });
+            $('#choice_A').on('click', function() {
+                setTimeout(function() {
+                    var text = $('#feedback-container').text().toLowerCase().trim();
+                    var difficulty = $('#difficulty').val();
+        
+                    // Check if text contains expected feedback words
+                    if (text.includes("incorrect") || text.includes("wrong") || text.includes("false")) {
+                        $('#choice_A').addClass('button_wrong');
+                    } else if (text.includes("correct") || text.includes("true")) {
+                        $('#choice_A').addClass('button_correct');
+                        if (difficulty == "Easy") {
+                                coins++;
+                            } else if (difficulty == "Medium") {
+                                coins += 5;
+                            } else if (difficulty == "Hard") {
+                                coins += 10;
+                            } else if (difficulty == "Difficult") {
+                                coins += 20;
+                            }
+                        // Update the coin counter in the DOM
+                        $('#coinCounter').text('Coins: ' + coins);
+                    } else {
+                        $('#choice_A').css('background-color', '');
+                    }
+                }, 1500);
+            });
 
-        $('#choice_D').click(function() {
-            setTimeout(function() {
-                // Retrieve the combined text content from the container
-                var text = $('#feedback-container').text().toLowerCase().trim();
-    
-                // Check for "incorrect" or "wrong" first
-                if (text.includes("incorrect") || text.includes("wrong")) {
-                    // Change the button color to red and display an alert
-                    $('#choice_D').addClass('button_wrong');
-                }
-                // If "incorrect" or "wrong" is not found, check for "correct"
-                else if (text.includes("correct")) {
-                    // Change the button color to green and display an alert
-                    $('#choice_D').addClass('button_correct');
-                }
-                // If none of the keywords are found
-                else {
-                    // Reset the button color and display the detected text
-                    $('#choice_D').css('background-color', '');
-                }
-            }, 1500); // 1500 milliseconds = 1.5 seconds
+            $('#choice_B').on('click', function() {
+                setTimeout(function() {
+                    var text = $('#feedback-container').text().toLowerCase().trim();
+                    var difficulty = $('#difficulty').val();
+        
+                    // Check if text contains expected feedback words
+                    if (text.includes("incorrect") || text.includes("wrong") || text.includes("false")) {
+                        $('#choice_B').addClass('button_wrong');
+                    } else if (text.includes("correct") || text.includes("true")) {
+                        $('#choice_B').addClass('button_correct');
+                        if (difficulty == "Easy") {
+                            coins++;
+                        } else if (difficulty == "Medium") {
+                            coins += 5;
+                        } else if (difficulty == "Hard") {
+                            coins += 10;
+                        } else if (difficulty == "Difficult") {
+                            coins += 20;
+                        }
+                        // Update the coin counter in the DOM
+                        $('#coinCounter').text('Coins: ' + coins);
+                    } else {
+                        $('#choice_B').css('background-color', '');
+                    }
+                }, 1500);
+            });
+
+            $('#choice_C').on('click', function() {
+                setTimeout(function() {
+                    var text = $('#feedback-container').text().toLowerCase().trim();
+                    var difficulty = $('#difficulty').val();
+        
+                    // Check if text contains expected feedback words
+                    if (text.includes("incorrect") || text.includes("wrong") || text.includes("false")) {
+                        $('#choice_C').addClass('button_wrong');
+                    } else if (text.includes("correct") || text.includes("true")) {
+                        $('#choice_C').addClass('button_correct');
+                        if (difficulty == "Easy") {
+                            coins++;
+                        } else if (difficulty == "Medium") {
+                            coins += 5;
+                        } else if (difficulty == "Hard") {
+                            coins += 10;
+                        } else if (difficulty == "Difficult") {
+                            coins += 20;
+                        }
+                        // Update the coin counter in the DOM
+                        $('#coinCounter').text('Coins: ' + coins);
+                    } else {
+                        $('#choice_C').css('background-color', '');
+                    }
+                }, 1500);
+            });
+
+            $('#choice_D').on('click', function() {
+                setTimeout(function() {
+                    var text = $('#feedback-container').text().toLowerCase().trim();
+                    var difficulty = $('#difficulty').val();
+        
+                    // Check if text contains expected feedback words
+                    if (text.includes("incorrect") || text.includes("wrong") || text.includes("false")) {
+                        $('#choice_D').addClass('button_wrong');
+                    } else if (text.includes("correct") || text.includes("true")) {
+                        $('#choice_D').addClass('button_correct');
+                        if (difficulty == "Easy") {
+                            coins++;
+                        } else if (difficulty == "Medium") {
+                            coins += 5;
+                        } else if (difficulty == "Hard") {
+                            coins += 10;
+                        } else if (difficulty == "Difficult") {
+                            coins += 20;
+                        }
+                        // Update the coin counter in the DOM
+                        $('#coinCounter').text('Coins: ' + coins);
+                    } else {
+                        $('#choice_D').css('background-color', '');
+                    }
+                }, 1500);
+            });
         });
     </script>
 </body>
