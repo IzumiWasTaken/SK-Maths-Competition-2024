@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -299,21 +300,17 @@
         
                     // Check if text contains expected feedback words
                     if (text.includes("incorrect") || text.includes("wrong") || text.includes("false")) {
-                        alert("Wrong")
                         $('#choice_A').addClass('button_wrong');
                     } else if (text.includes("correct") || text.includes("true")) {
                         $('#choice_A').addClass('button_correct');
                         if (difficulty == "Easy") {
                                 coins++;
-                                alert('Coin added by 1');
                             } else if (difficulty == "Medium") {
                                 coins += 5;
-                                alert('Coin added by 5');
                             } else if (difficulty == "Hard") {
                                 coins += 10;
                             } else if (difficulty == "Difficult") {
                                 coins += 20;
-                                alert('Coin added by 20');
                             }
                         // Update the coin counter in the DOM
                         $('#coinCounter').text('Coins: ' + coins);
@@ -330,21 +327,17 @@
         
                     // Check if text contains expected feedback words
                     if (text.includes("incorrect") || text.includes("wrong") || text.includes("false")) {
-                        alert("Wrong")
                         $('#choice_B').addClass('button_wrong');
                     } else if (text.includes("correct") || text.includes("true")) {
                         $('#choice_B').addClass('button_correct');
                         if (difficulty == "Easy") {
                             coins++;
-                            alert('Coin added by 1');
                         } else if (difficulty == "Medium") {
                             coins += 5;
-                            alert('Coin added by 5');
                         } else if (difficulty == "Hard") {
                             coins += 10;
                         } else if (difficulty == "Difficult") {
                             coins += 20;
-                            alert('Coin added by 20');
                         }
                         // Update the coin counter in the DOM
                         $('#coinCounter').text('Coins: ' + coins);
@@ -361,21 +354,17 @@
         
                     // Check if text contains expected feedback words
                     if (text.includes("incorrect") || text.includes("wrong") || text.includes("false")) {
-                        alert("Wrong")
                         $('#choice_C').addClass('button_wrong');
                     } else if (text.includes("correct") || text.includes("true")) {
                         $('#choice_C').addClass('button_correct');
                         if (difficulty == "Easy") {
                             coins++;
-                            alert('Coin added by 1');
                         } else if (difficulty == "Medium") {
                             coins += 5;
-                            alert('Coin added by 5');
                         } else if (difficulty == "Hard") {
                             coins += 10;
                         } else if (difficulty == "Difficult") {
                             coins += 20;
-                            alert('Coin added by 20');
                         }
                         // Update the coin counter in the DOM
                         $('#coinCounter').text('Coins: ' + coins);
@@ -392,21 +381,17 @@
         
                     // Check if text contains expected feedback words
                     if (text.includes("incorrect") || text.includes("wrong") || text.includes("false")) {
-                        alert("Wrong")
                         $('#choice_D').addClass('button_wrong');
                     } else if (text.includes("correct") || text.includes("true")) {
                         $('#choice_D').addClass('button_correct');
                         if (difficulty == "Easy") {
                             coins++;
-                            alert('Coin added by 1');
                         } else if (difficulty == "Medium") {
                             coins += 5;
-                            alert('Coin added by 5');
                         } else if (difficulty == "Hard") {
                             coins += 10;
                         } else if (difficulty == "Difficult") {
                             coins += 20;
-                            alert('Coin added by 20');
                         }
                         // Update the coin counter in the DOM
                         $('#coinCounter').text('Coins: ' + coins);
