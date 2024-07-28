@@ -50,7 +50,25 @@
             margin-bottom: auto;
             vertical-align: middle;
         }
-        #coinCounter {
+        .gacha-container {
+            position: fixed;
+            right: 10px;
+            top: 10px;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 25px;
+            font-weight: bold;
+            background-color: #0077B6;
+            color: #fff;
+        }
+        .gacha-center {
+            display: inline-block;
+            margin-top: auto;
+            margin-bottom: auto;
+            vertical-align: middle;
+        }
+        #gachaButton {
             vertical-align: middle;
         }
         h1 {
@@ -213,9 +231,14 @@
             <button id="back-button">Back</button>
         </div>
         <div class="coin-counter">
-            <img src = 'https://static-00.iconduck.com/assets.00/gold-coin-icon-512x512-ehq45y6s.png' width = 30, height = 30, class="coin-center">
-            <div class = "coin-center" id="coinCounter">Coins: 0
+            <img src = 'https://static-00.iconduck.com/assets.00/gold-coin-icon-512x512-ehq45y6s.png' width = 30 height = 30 class="coin-center">
+            <div class = "coin-center" id="coinCounter">Coins: 0</div>
         </div>
+        <button class="gacha-container">
+            <!-- <img src = 'C:\Users\Krittaphat\Desktop\Maths Competition 2024\Pokeball.png' width = 45 height = 45 class="gacha-center"> -->
+            <img src = 'https://seeklogo.com/images/P/pokeball-logo-DC23868CA1-seeklogo.com.png' width = 40 height = 40 class="gacha-center">
+            <div class = "gacha-center" id="gachaButton">Gacha</div>
+        </button>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
