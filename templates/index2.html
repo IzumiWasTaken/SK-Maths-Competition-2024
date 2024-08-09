@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -252,11 +253,32 @@
         <button class="gacha-back-button" id="gacha-back-button">
             <div class = "gacha-center" id="gachaBackButton">Back</div>
         </button>
-        <div id="gacha-container"></div>
+        <div id="gacha-container">
+            <h2>Open Your Loot Boxes Here!</h2>
+            <button id="openButton" class="button">Open Loot Box</button>
+            <div id="rewardDisplay" class="reward"></div>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
+        function openLootBox() {
+            // List all rewards Here
+            const rewards = [
+            "Reward 1",
+            "Reward 2",
+            "Reward 3",
+            "Reward 4",
+            "Reward 5"
+            ];
+
+            const randomIndex = Math.floor(Math.random() * rewards.length) //rewards.length is the amount of rewards
+            const reward = rewards[randomIndex];
+
+            document.getElementById("rewardDisplay").textContent = 'You got ' + reward;
+        }
+        document.getElementById("openButton").addEventListener("click", openLootBox)
+
         $(document).ready(function() {
             let coins = 0; // Declare the coins variable her
             
