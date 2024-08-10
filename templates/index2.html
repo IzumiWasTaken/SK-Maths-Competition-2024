@@ -270,6 +270,11 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         let coins = 0
+        let rewards_1 = 0
+        let rewards_2 = 0
+        let rewards_3 = 0
+        let rewards_4 = 0
+        let rewards_5 = 0
         $(document).ready(function() {            
             $('#generateForm').on('submit', function(event) {
                 event.preventDefault();
@@ -480,15 +485,37 @@
         
                 const randomIndex = Math.floor(Math.random() * rewards.length);
                 const reward = rewards[randomIndex];
-        
+                
+                
                 // Display the reward text
-                document.getElementById("rewardDisplay").textContent = 'You got' + rewards.name;
-        
+                document.getElementById("rewardDisplay").textContent = 'You got ' + reward.name;
+
                 // Display the reward image
                 const rewardImage = document.getElementById("rewardImage");
                 rewardImage.src = rewards.img;
                 rewardImage.style.display = "block"; // Make sure the image is visible
+                
                 $('#coinCounter').text('Coins: ' + coins);
+                var text_reward = document.getElementById("rewardDisplay").textContent || document.getElementById("rewardDisplay").innerText;
+
+                if (text_reward.includes("Reward 1")) {
+                    rewards_1++;
+                    alert("rewards_1");
+                } else if (text_reward.includes("Reward 2")) {
+                    rewards_2++;
+                    alert("rewards_2");
+                } else if (text_reward.includes("Reward 3")) {
+                    rewards_3++;
+                    alert("rewards_3");
+                } else if (text_reward.includes("Reward 4")) {
+                    rewards_4++;
+                    alert("rewards_4");
+                }  else if (text_reward.includes("Reward 5")) {
+                    rewards_5++;
+                    alert("rewards_5");
+                }  else {
+                    return;
+                }
             } else {
                 alert("You don't have enough coins to open a loot box!");
                 $('#coinCounter').text('Coins: ' + coins);
