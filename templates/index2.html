@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,9 +51,11 @@
         }
         .gacha-button {
             position: fixed;
+            display: block !important;
             right: 10px;
             top: 10px;
             padding: 10px;
+            margin-bottom: 5px;
             border-radius: 10px;
             text-align: center;
             font-size: 25px;
@@ -81,6 +81,20 @@
             margin-top: auto;
             margin-bottom: auto;
             vertical-align: middle;
+        }
+        .collectibles-button {
+            display: block !important;
+            position: fixed;
+            right: 10px;
+            width: 200px;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            background-color: #0077B6;
+            color: #fff;
+            z-index: 99;
         }
         h1 {
             color: #333;
@@ -116,6 +130,10 @@
             font-size: 1.2em;
             color: #555;
         }
+        .block-display button{
+            margin-bottom:5px;
+            display:block;
+          }
         .loader {
             width: 48px;
             height: 48px;
@@ -189,6 +207,16 @@
             background-color: #b82323;
             color: #fff;
         }
+        .btn-group button {
+            padding: 10px 24px; /* Some padding */
+            cursor: pointer; /* Pointer/hand icon */
+            width: 50%; /* Set a width if needed */
+            display: block; /* Make the buttons appear below each other */
+        }
+          
+          .btn-group button:not(:last-child) {
+            border-bottom: none; /* Prevent double borders */
+        }
     </style>
     <!-- Include MathJax -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -196,6 +224,19 @@
 </head>
 <body>
     <div class="container">
+        <div class="btn-group">
+            <button id = "collectibles-button" class = "collectibles-button">
+                <div class = "collectibles-text" id = "collectiblesButton">Collectibles</div>
+            </button>
+             <button class="gacha-button" id="gacha-button">
+                <!-- <img src = 'C:\Users\Krittaphat\Desktop\Maths Competition 2024\Pokeball.png' width = 45 height = 45 class="gacha-center"> -->
+                <img src = 'https://seeklogo.com/images/P/pokeball-logo-DC23868CA1-seeklogo.com.png' width = 40 height = 40 class="gacha-center">
+                <div class = "gacha-center" id="gachaButton">Lootboxes</div>
+            </button>
+            <button class="gacha-back-button" id="gacha-back-button">
+                <div class = "gacha-center" id="gachaBackButton">Back</div>
+            </button>
+        </div>
         <h1>Math Question Generator</h1>
         <form id="generateForm"> 
             <label for="topic">Choose a Topic:</label>
@@ -245,14 +286,6 @@
             <img src = 'https://static-00.iconduck.com/assets.00/gold-coin-icon-512x512-ehq45y6s.png' width = 30 height = 30 class="coin-center">
             <div class = "coin-center" id="coinCounter">Coins: 0</div>
         </div>
-        <button class="gacha-button" id="gacha-button">
-            <!-- <img src = 'C:\Users\Krittaphat\Desktop\Maths Competition 2024\Pokeball.png' width = 45 height = 45 class="gacha-center"> -->
-            <img src = 'https://seeklogo.com/images/P/pokeball-logo-DC23868CA1-seeklogo.com.png' width = 40 height = 40 class="gacha-center">
-            <div class = "gacha-center" id="gachaButton">Lootboxes</div>
-        </button>
-        <button class="gacha-back-button" id="gacha-back-button">
-            <div class = "gacha-center" id="gachaBackButton">Back</div>
-        </button>
         <div id="gacha-container">
             <h2>Open Your Loot Boxes Here!</h2>
             <button id="openButton" class="button">
@@ -265,6 +298,7 @@
             <div id="rewardDisplay" class="reward"></div>
             <img id="rewardImage" src="" alt="Reward Image" style="display: none; margin-top: 20px; width: 200px;">
         </div>
+
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -350,9 +384,16 @@
                 $('#problem-container, #response-container, #feedback-container, #generateForm, #gacha-button').hide();
             });
 
+            $('#collectibles-button').on('click', function() {
+                $('#problem-container, #response-container, #feedback-container, #generateForm, #collectibles-button').hide();
+                $('.choice-button').removeClass('button_correct button_wrong').prop('disabled', false);
+                $('#generateForm')[0].reset();
+                $('#gacha-back-button').show();
+            });
+
             $('#gacha-back-button').on('click', function() {
                 $('#gacha-container, #gacha-back-button').hide();
-                $('#generateForm, #gacha-button').show();
+                $('#generateForm, #gacha-button, #collectibles-button').show();
                 $('#rewardDisplay').empty();
                 $('#rewardImage').hide();
             });
