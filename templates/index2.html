@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,9 +12,9 @@
             font-size: 20px;
             font-family: Montserrat;
             background-color: #FFFFED;
+            align-items: flex-start;
             display: flex;
             justify-content: center;
-            align-items: flex-start;
             height: 100vh;
             margin: 0;
             padding: 0;
@@ -52,9 +50,12 @@
             vertical-align: middle;
         }
         .gacha-button {
-            position: fixed;
+            display: block !important;
+            position: fixed
             right: 10px;
             top: 10px;
+            width: 250px;
+            margin-top: 10px;
             padding: 10px;
             border-radius: 10px;
             text-align: center;
@@ -67,7 +68,9 @@
             display: none;
             position: fixed;
             right: 10px;
+            height: 63.37px;
             top: 10px;
+            margin-top: 123px;
             padding: 10px;
             border-radius: 10px;
             text-align: center;
@@ -81,6 +84,21 @@
             margin-top: auto;
             margin-bottom: auto;
             vertical-align: middle;
+        }
+        
+        .collectibles-button {
+            display: block !important;
+            position: fixed;
+            right: 10px;
+            top: 80px;
+            width: 200px;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            background-color: #0077B6;
+            color: #fff;
         }
         h1 {
             color: #333;
@@ -115,6 +133,17 @@
         #generated-problem, #gpt-response {
             font-size: 1.2em;
             color: #555;
+        }
+        .btn-button {
+            margin-bottom: 5px;
+            right: 10px;
+            position: fixed;
+            display: flex;
+            justify-content: right;
+            float: right !important;
+        }
+        .btn-button:last-child {
+            margin-bottom:0;
         }
         .loader {
             width: 48px;
@@ -245,14 +274,6 @@
             <img src = 'https://static-00.iconduck.com/assets.00/gold-coin-icon-512x512-ehq45y6s.png' width = 30 height = 30 class="coin-center">
             <div class = "coin-center" id="coinCounter">Coins: 0</div>
         </div>
-        <button class="gacha-button" id="gacha-button">
-            <!-- <img src = 'C:\Users\Krittaphat\Desktop\Maths Competition 2024\Pokeball.png' width = 45 height = 45 class="gacha-center"> -->
-            <img src = 'https://seeklogo.com/images/P/pokeball-logo-DC23868CA1-seeklogo.com.png' width = 40 height = 40 class="gacha-center">
-            <div class = "gacha-center" id="gachaButton">Lootboxes</div>
-        </button>
-        <button class="gacha-back-button" id="gacha-back-button">
-            <div class = "gacha-center" id="gachaBackButton">Back</div>
-        </button>
         <div id="gacha-container">
             <h2>Open Your Loot Boxes Here!</h2>
             <button id="openButton" class="button">
@@ -264,10 +285,25 @@
             </button>
             <div id="rewardDisplay" class="reward"></div>
             <img id="rewardImage" src="" alt="Reward Image" style="display: none; margin-top: 20px; width: 200px;">
-        </div>
+        </div>       
     </div>
+    
+    <div class = "btn-button">
+         <button class="gacha-button" id="gacha-button">
+            <!-- <img src = 'C:\Users\Krittaphat\Desktop\Maths Competition 2024\Pokeball.png' width = 45 height = 45 class="gacha-center"> -->
+            <img src = 'https://seeklogo.com/images/P/pokeball-logo-DC23868CA1-seeklogo.com.png' width = 40 height = 40 class="gacha-center">
+            <div class = "gacha-center" id="gachaButton">Lootboxes</div>
+        </button>
+        <button id = "collectibles-button" class = "collectibles-button">
+            <div class = "collectibles-text" id = "collectiblesButton">Collectibles</div>
+        </button>
+        <button class="gacha-back-button" id="gacha-back-button">
+            <div class = "gacha-center" id="gachaBackButton">Back</div>
+        </button> 
+    <div>
+</body>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         let coins = 0
         let rewards_1 = 0
@@ -341,6 +377,10 @@
                 $('#generateForm')[0].reset();
                 $('#problem-container, #response-container, #feedback-container').hide();
                 $('#generated-problem, #gpt-response').text('');
+                $('.gacha-center').show();
+                $('#gacha-center').show();
+                $('.gacha-button').show();
+                $('#gacha-button').show();
             });
 
             $('#gacha-button').on('click', function() {
@@ -348,11 +388,21 @@
                 $('.choice-button').removeClass('button_correct button_wrong').prop('disabled', false);
                 $('#generateForm')[0].reset();
                 $('#problem-container, #response-container, #feedback-container, #generateForm, #gacha-button').hide();
+                $(this).hide();
+                $('.gacha-button').hide();
+                $('#gacha-button').hide();
+            });
+
+            $('#collectibles-button').on('click', function() {
+                $('#problem-container, #response-container, #feedback-container, #generateForm, #collectibles-button, #gacha-container').hide();
+                $('.choice-button').removeClass('button_correct button_wrong').prop('disabled', false);
+                $('#generateForm')[0].reset();
+                $('#gacha-back-button').show();
             });
 
             $('#gacha-back-button').on('click', function() {
                 $('#gacha-container, #gacha-back-button').hide();
-                $('#generateForm, #gacha-button').show();
+                $('#generateForm, #gacha-button, #collectibles-button').show();
                 $('#rewardDisplay').empty();
                 $('#rewardImage').hide();
             });
@@ -522,6 +572,5 @@
             }
         }
         document.getElementById("openButton").addEventListener("click", openLootBox)
-    </script>
-</body>
+</script>
 </html>
