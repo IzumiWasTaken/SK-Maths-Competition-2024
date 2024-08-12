@@ -50,10 +50,10 @@
             vertical-align: middle;
         }
         .gacha-button {
-            display: block !important;
-            position: fixed
+            display: block;
+            position: fixed;
             right: 10px;
-            top: 10px;
+            top: 2px;
             width: 250px;
             margin-top: 10px;
             padding: 10px;
@@ -64,13 +64,14 @@
             background-color: #0077B6;
             color: #fff;
         }
+
         .gacha-back-button {
             display: none;
             position: fixed;
             right: 10px;
             height: 63.37px;
             top: 10px;
-            margin-top: 123px;
+            margin-top: 121px;
             padding: 10px;
             border-radius: 10px;
             text-align: center;
@@ -87,7 +88,7 @@
         }
         
         .collectibles-button {
-            display: block !important;
+            display: block;
             position: fixed;
             right: 10px;
             top: 80px;
@@ -133,6 +134,9 @@
         #generated-problem, #gpt-response {
             font-size: 1.2em;
             color: #555;
+        }
+        #collectibles-container {
+            display: none;
         }
         .btn-button {
             margin-bottom: 5px;
@@ -272,7 +276,7 @@
         </div>
         <div class="coin-counter">
             <img src = 'https://static-00.iconduck.com/assets.00/gold-coin-icon-512x512-ehq45y6s.png' width = 30 height = 30 class="coin-center">
-            <div class = "coin-center" id="coinCounter">Coins: 0</div>
+            <div class = "coin-center" id="coinCounter">Coins: 10</div>
         </div>
         <div id="gacha-container">
             <h2>Open Your Loot Boxes Here!</h2>
@@ -286,6 +290,10 @@
             <div id="rewardDisplay" class="reward"></div>
             <img id="rewardImage" src="" alt="Reward Image" style="display: none; margin-top: 20px; width: 200px;">
         </div>       
+        <div class = "collectibles-container" id = "collectibles-container">
+            <h2>Collectibles</h2>
+            
+        </div>
     </div>
     
     <div class = "btn-button">
@@ -305,7 +313,7 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        let coins = 0
+        let coins = 10
         let rewards_1 = 0
         let rewards_2 = 0
         let rewards_3 = 0
@@ -384,27 +392,24 @@
             });
 
             $('#gacha-button').on('click', function() {
-                $('#gacha-container, #gacha-back-button').show();
+                $('#gacha-container, #gacha-back-button, #collectibles-button').show();
                 $('.choice-button').removeClass('button_correct button_wrong').prop('disabled', false);
                 $('#generateForm')[0].reset();
                 $('#problem-container, #response-container, #feedback-container, #generateForm, #gacha-button').hide();
-                $(this).hide();
-                $('.gacha-button').hide();
-                $('#gacha-button').hide();
             });
 
             $('#collectibles-button').on('click', function() {
                 $('#problem-container, #response-container, #feedback-container, #generateForm, #collectibles-button, #gacha-container').hide();
                 $('.choice-button').removeClass('button_correct button_wrong').prop('disabled', false);
                 $('#generateForm')[0].reset();
-                $('#gacha-back-button').show();
+                $('#gacha-back-button, #collectibles-container, #gacha-button').show();
             });
 
             $('#gacha-back-button').on('click', function() {
                 $('#gacha-container, #gacha-back-button').hide();
                 $('#generateForm, #gacha-button, #collectibles-button').show();
                 $('#rewardDisplay').empty();
-                $('#rewardImage').hide();
+                $('#rewardImage, #collectibles-container').hide();
             });
 
             $('#Generate-Question').on('click', function() {
@@ -526,43 +531,37 @@
         
                 // List all rewards and their associated images
                 const rewards = [
-                    { name: "Reward 1", img: "C:\Users\Krittaphat\Desktop\Maths Competition 2024\templates\Image1.png" },
-                    { name: "Reward 2", img: "C:\Users\Krittaphat\Desktop\Maths Competition 2024\templates\Image2.png" },
-                    { name: "Reward 3", img: "C:\Users\Krittaphat\Desktop\Maths Competition 2024\templates\Image3.png" },
-                    { name: "Reward 4", img: "C:\Users\Krittaphat\Desktop\Maths Competition 2024\templates\Image4.png" },
-                    { name: "Reward 5", img: "C:\Users\Krittaphat\Desktop\Maths Competition 2024\templates\Image5.png" }
+                { name: "Reward 1", img: "https://i.imgur.com/XTJXFbv.png" },
+                { name: "Reward 2", img: "https://i.imgur.com/ML0iNtr.png" },
+                { name: "Reward 3", img: "https://i.imgur.com/1sFoj8g.png" },
+                { name: "Reward 4", img: "https://i.imgur.com/5077jCJ.png" },
+                { name: "Reward 5", img: "https://i.imgur.com/mTR56q8.png" }
                 ];
-        
-                const randomIndex = Math.floor(Math.random() * rewards.length);
-                const reward = rewards[randomIndex];
-                
-                
-                // Display the reward text
-                document.getElementById("rewardDisplay").textContent = 'You got ' + reward.name;
-
-                // Display the reward image
-                const rewardImage = document.getElementById("rewardImage");
-                rewardImage.src = rewards.img;
-                rewardImage.style.display = "block"; // Make sure the image is visible
+            
+            const randomIndex = Math.floor(Math.random() * rewards.length);
+            const reward = rewards[randomIndex];
+            
+            // Display the reward text
+            document.getElementById("rewardDisplay").textContent = 'You got ' + reward.name;
+            
+            // Display the reward image
+            const rewardImage = document.getElementById("rewardImage");
+            rewardImage.src = reward.img;  // Use reward.img instead of rewards.img
+            rewardImage.style.display = "inline-block"; // Make sure the image is visible
                 
                 $('#coinCounter').text('Coins: ' + coins);
                 var text_reward = document.getElementById("rewardDisplay").textContent || document.getElementById("rewardDisplay").innerText;
 
                 if (text_reward.includes("Reward 1")) {
                     rewards_1++;
-                    alert("rewards_1");
                 } else if (text_reward.includes("Reward 2")) {
                     rewards_2++;
-                    alert("rewards_2");
                 } else if (text_reward.includes("Reward 3")) {
                     rewards_3++;
-                    alert("rewards_3");
                 } else if (text_reward.includes("Reward 4")) {
                     rewards_4++;
-                    alert("rewards_4");
                 }  else if (text_reward.includes("Reward 5")) {
                     rewards_5++;
-                    alert("rewards_5");
                 }  else {
                     return;
                 }
