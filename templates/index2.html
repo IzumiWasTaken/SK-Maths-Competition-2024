@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -276,7 +277,7 @@
         </div>
         <div class="coin-counter">
             <img src = 'https://static-00.iconduck.com/assets.00/gold-coin-icon-512x512-ehq45y6s.png' width = 30 height = 30 class="coin-center">
-            <div class = "coin-center" id="coinCounter">Coins: 10</div>
+            <div class = "coin-center" id="coinCounter">Coins: 0</div>
         </div>
         <div id="gacha-container">
             <h2>Open Your Loot Boxes Here!</h2>
@@ -292,7 +293,11 @@
         </div>       
         <div class = "collectibles-container" id = "collectibles-container">
             <h2>Collectibles</h2>
-            
+            <img id="collectiblesImage1" src="https://i.ibb.co/nbg32wH/Locked-Image1.png" alt="Collectibles Image 1" style="display: inline-block; margin-top: 10; width: 100px;">
+            <img id="collectiblesImage2" src="https://i.ibb.co/9Hz69Pq/Locked-Image2.png" alt="Collectibles Image 2" style="display: inline-block; margin-top: 10; width: 100px;">
+            <img id="collectiblesImage3" src="https://i.ibb.co/vw3HbsC/Locked-Image3.png" alt="Collectibles Image 3" style="display: inline-block; margin-top: 10; width: 100px;">
+            <img id="collectiblesImage4" src="https://i.ibb.co/SNbWKgw/Locked-Image4.png" alt="Collectibles Image 4" style="display: inline-block; margin-top: 10; width: 100px;">
+            <img id="collectiblesImage5" src="https://i.ibb.co/c1wR85x/Locked-Image5.png" alt="Collectibles Image 5" style="display: inline-block; margin-top: 10; width: 100px;">
         </div>
     </div>
     
@@ -313,7 +318,7 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        let coins = 10
+        let coins = 0
         let rewards_1 = 0
         let rewards_2 = 0
         let rewards_3 = 0
@@ -395,7 +400,7 @@
                 $('#gacha-container, #gacha-back-button, #collectibles-button').show();
                 $('.choice-button').removeClass('button_correct button_wrong').prop('disabled', false);
                 $('#generateForm')[0].reset();
-                $('#problem-container, #response-container, #feedback-container, #generateForm, #gacha-button').hide();
+                $('#problem-container, #response-container, #feedback-container, #generateForm, #gacha-button, #collectibles-container').hide();
             });
 
             $('#collectibles-button').on('click', function() {
@@ -533,7 +538,7 @@
                 const rewards = [
                 { name: "Reward 1", img: "https://i.ibb.co/x19wHzH/Image1.png" },
                 { name: "Reward 2", img: "https://i.ibb.co/CHG6zHN/Image2.png" },
-                { name: "Reward 3", img: "https://i.ibb.co/KsjkrfW/Image3.png"},
+                { name: "Reward 3", img: "https://i.ibb.co/KsjkrfW/Image3.png" },
                 { name: "Reward 4", img: "https://i.ibb.co/j3HbrdN/Image4.png" },
                 { name: "Reward 5", img: "https://i.ibb.co/pvsQm2j/Image5.png" }
                 ];
@@ -542,7 +547,7 @@
             const reward = rewards[randomIndex];
             
             // Display the reward text
-            document.getElementById("rewardDisplay").textContent = 'You got ' + reward.name;
+            document.getElementById("rewardDisplay").textContent = 'You got ' + reward.name + '!';
             
             // Display the reward image
             const rewardImage = document.getElementById("rewardImage");
@@ -552,18 +557,36 @@
                 $('#coinCounter').text('Coins: ' + coins);
                 var text_reward = document.getElementById("rewardDisplay").textContent || document.getElementById("rewardDisplay").innerText;
 
-                if (text_reward.includes("Reward 1")) {
+                if (text_reward.includes("Reward 1!")) {
                     rewards_1++;
-                } else if (text_reward.includes("Reward 2")) {
+                    console.log("Value of rewards_1 increased")
+                    if (rewards_1 > 0) {
+                        collectiblesImage1.src = 'https://i.ibb.co/x19wHzH/Image1.png'
+                    }
+                } else if (text_reward.includes("Reward 2!")) {
                     rewards_2++;
-                } else if (text_reward.includes("Reward 3")) {
+                    console.log("Value of rewards_2 increased")
+                    if (rewards_2 > 0) {
+                        collectiblesImage2.src = 'https://i.ibb.co/CHG6zHN/Image2.png'
+                    }
+                } else if (text_reward.includes("Reward 3!")) {
                     rewards_3++;
-                } else if (text_reward.includes("Reward 4")) {
+                    console.log("Value of rewards_3 increased")
+                    if (rewards_3 > 0) {
+                        collectiblesImage3.src = 'https://i.ibb.co/KsjkrfW/Image3.png'
+                    }
+                } else if (text_reward.includes("Reward 4!")) {
                     rewards_4++;
-                }  else if (text_reward.includes("Reward 5")) {
+                    console.log("Value of rewards_4 increased")
+                    if (rewards_4 > 0) {
+                        collectiblesImage4.src = 'https://i.ibb.co/j3HbrdN/Image4.png'
+                    }
+                }  else if (text_reward.includes("Reward 5!")) {
                     rewards_5++;
-                }  else {
-                    return;
+                    console.log("Value of rewards_5 increased")
+                    if (rewards_5 > 0) {
+                        collectiblesImage5.src = 'https://i.ibb.co/pvsQm2j/Image5.png'
+                    }
                 }
             } else {
                 alert("You don't have enough coins to open a loot box!");
@@ -571,5 +594,6 @@
             }
         }
         document.getElementById("openButton").addEventListener("click", openLootBox)
-</script>
+    </script>
 </html>
+
