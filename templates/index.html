@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Question Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Montserrat:wght@400;600&display=swap" rel="stylesheet"> <!-- Added Google Fonts -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: Montserrat, sans-serif;
+            background-color: #F7F3FF;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .sidebar {
+            width: 240px;
+            height: 100vh;
+            background-color: #E9E2F7;
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+            padding-top: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            transition: width 0.3s ease;
+        }
+
+        .sidebar.expanded {
+            width: 60px;
+        }
+
+        .sidebar .toggle-btn {
+            margin-left: 15px; /* Anchored to the left */
+            cursor: pointer;
+            padding: 10px;
+            padding-bottom: 20px;
+        }
+
+        .sidebar a {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            font-family: 'Roboto', sans-serif; /* Updated to Roboto Semi-Bold */
+            transition: background-color 0.3s ease;
+            border-radius: 25px; /* Added pill shape */
+            margin: 10px; /* Added margin for separation */
+        }
+
+        .sidebar.expanded a {
+            border-radius: 0; /* Remove border radius when minimized */
+        }
+
+        .sidebar.expanded a.active {
+            background-color: #D5C4F2;
+        }
+
+        .sidebar a:hover,
+        .sidebar a.active {
+            background-color: #D5C4F2;
+        }
+
+        .sidebar a img {
+            margin-right: 15px;
+            width: 24px;
+            height: 24px;
+        }
+
+        .sidebar.expanded a span {
+            display: none;
+        }
+
+        .sidebar a span.smaller {
+            font-size: 12px; /* Smaller font for page names when minimized */
+        }
+
+        .expanded-text, .retracted-text {
+            transition: opacity 0.3s ease;
+        }
+
+        /* Default: Hide the retracted text, show the expanded text */
+        .expanded-text {
+            display: inline;
+        }
+
+        .retracted-text {
+            display: none;
+        }
+
+        /* When the sidebar is retracted, show the retracted text, hide the expanded text */
+        .sidebar.retracted .expanded-text {
+            display: none;
+        }
+
+        .sidebar.retracted .retracted-text {
+            display: inline;
+        }
+
+        .content {
+            margin-left: 260px;
+            padding: 40px;
+            width: 100%;
+        }
+
+        .container {
+            background-color: #FFFFFF;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        #problem-container {
+            display: none;
+        }
+
+        #response-container {
+            display: none;
+        }
+
+        #feedback-container {
+            display: none;
+        }
+
+        .coin-counter {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background-color: #D5C4F2;
+            color: #333;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .coin-counter img {
+            margin-right: 10px;
+        }
+
+        .generate-q {
+            background-color: #F3EDF7;
+            border: none;
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            font-family: 'Roboto', sans-serif; /* Updated button font to medium bold */
+            font-weight: 500; /* Medium bold */
+            transition: background-color 0.3s ease;
+            margin-bottom: 10px; /* Padding at the bottom of the button */
+            color: #333;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .generate-q:hover {
+            background-color: #E2D4EB;
+        }
+
+        button {
+            background-color: #E4D5F4;
+            color: #4B3B6B;
+            border: none;
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            font-family: 'Roboto', sans-serif; /* Updated button font to medium bold */
+            font-weight: 500; /* Medium bold */
+            transition: background-color 0.3s ease;
+            margin-bottom: 10px; /* Padding at the bottom of the button */
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+/* For green or red, use #6BBF59 and #E06C75 respectively */
+
+        .button_correct {
+            background-color: #6BBF59;
+            color: #1A1A1A;
+        }
+
+        .button_wrong {
+            background-color: #E06C75;
+            color: #F9F9F9;
+        }
+
+        button:hover {
+            background-color: #C3A7E6;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin: 20px 0 10px;
+            font-size: 18px;
+        }
+
+        select {
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 2px solid #ccc;
+            font-size: 16px;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+                /* Collectibles Grid */
+        .collectibles-section {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .collectible-item {
+            background-color: #d4d3d3;
+            border-radius: 8px;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #999;
+            font-size: 18px;
+        }
+
+        /* Larger Item Styles */
+        .collectibles-section .collectible-item:nth-child(1),
+        .collectibles-section .collectible-item:nth-child(2) {
+            grid-column: span 2;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .collectibles-section {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .collectibles-section {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                display: none;
+            }
+        }
+
+        footer {
+            background-color: #f1f1f1;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="toggle-btn" onclick="toggleSidebar()">
+            <img src="https://img.icons8.com/material-rounded/24/000000/menu.png" alt="Toggle Sidebar"> <!-- Hamburger icon -->
+        </div>
+        <a href="#" class="active" onclick="setActiveLink(this); toggleHome();">
+            <img src="https://img.icons8.com/material-outlined/24/000000/home--v2.png" alt="Home Icon">
+            <span>Home</span>
+        </a>
+        <a href="#" onclick="setActiveLink(this); toggleLootbox();">
+            <img src="https://img.icons8.com/material-outlined/24/000000/treasure-chest.png" alt="Lootbox Icon">
+            <span>Lootbox</span>
+        </a>
+        <a href="#" onclick="setActiveLink(this); toggleCollectibles();">
+            <img src="https://img.icons8.com/material-outlined/24/000000/box.png" alt="Inventory Icon">
+            <span>Inventory</span>
+        </a>
+    </div>
+
+    <div class="content">
+        <div class="container">
+            <h1>Math Question Generator</h1>
+            <form id="generateForm">
+                <label for="topic">Choose a Topic:</label>
+                <select id="topic" name="topic" required>
+                    <option class="disabledclass" disabled selected value>Choose a Topic</option>
+                    <option value="Trig">Trigonometry</option>
+                    <option value="Para">Parabola</option>
+                    <option value="Numbers">Numbers</option>
+                    <option value="Prop">Proportions</option>
+                    <option value="Matrices">Matrices</option>
+                    <option value="Inequalities">Inequalities</option>
+                    <option value="Probabilities">Probabilities</option>
+                    <option value="Percentages">Percentages</option>
+                    <option value="Number Sequences">Number Sequences</option>
+                    <option value="Ratio">Ratio</option>
+                </select>
+                <label for="difficulty">Choose a Difficulty:</label>
+                <select id="difficulty" name="difficulty" required>
+                    <option class="disabledclass" disabled selected value>Choose a Difficulty</option>
+                    <option value="Easy">Easy</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Hard">Hard</option>
+                    <option value="Difficult">Difficult</option>
+                </select>
+                <button class="generate-q" id="Generate-Question"  type="submit"> → Generate Question</button>
+            </form>
+            <div class="loader" id="loader"></div>
+            <div id="problem-container">
+                <h2>Generated Problem:</h2>
+                <div id="generated-problem"></div> <!-- Changed to div for LaTex -->
+            </div>
+            <div id="response-container">
+                <label for="user-response">Choices:</label>
+                <button id="choice_A" class="choice-button" value="I choose choice A.">Choice A</button>
+                <button id="choice_B" class="choice-button" value="I choose choice B.">Choice B</button>
+                <button id="choice_C" class="choice-button" value="I choose choice C.">Choice C</button>
+                <button id="choice_D" class="choice-button" value="I choose choice D.">Choice D</button>
+            </div>
+            <div id="feedback-container">
+                <h2>Feedback:</h2>
+                <p id="gpt-response"></p>
+                <button id="next-question">Next Question</button>
+                <button id="back-button">Back</button>
+            </div>
+            <div style="display: none;" id="lootbox-container">
+                <h2>Lootboxes</h2>
+                <div style="display: flex; align-items: center;">
+                    <div>
+                        <img id="rewardImage" src="https://i.ibb.co/phBBshc/Component-2.png" alt="Reward Image" style="width: 300px; height: 300px; background: #ccc; border-radius: 10px; display: flex; justify-content: center; align-items: center; text-align: center; ">
+                        <div id="rewardDisplay" class="reward"></div>
+                    </div>
+                    <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; align-items: center; text-align: center;">
+                        <h3>Standard Lootbox</h3>
+                        <p>Open lootbox to receive rewards!</p>
+                        <button class="button" id="openButton">Open Loot Box</button>
+                    </div>
+                </div>
+            </div>
+            <header class="header" style="display: none;">
+                <h1>Collectibles</h1>
+            </header>
+            <section class="collectibles-section" style="display: none;" id="collectibles-section">
+                <div class="collectible-item">
+                    <img id="collectiblesImage1" src="https://i.ibb.co/nbg32wH/Locked-Image1.png" alt="Collectibles Image 1">
+                </div>
+                <div class="collectible-item">
+                    <img id="collectiblesImage2" src="https://i.ibb.co/9Hz69Pq/Locked-Image2.png" alt="Collectibles Image 2">
+                </div>
+                <div class="collectible-item">
+                    <img id="collectiblesImage3" src="https://i.ibb.co/vw3HbsC/Locked-Image3.png" alt="Collectibles Image 3">
+                </div>
+                <div class="collectible-item">
+                    <img id="collectiblesImage4" src="https://i.ibb.co/SNbWKgw/Locked-Image4.png" alt="Collectibles Image 4" style="display: inline-block; margin-top: 10; width: 100px;">
+                </div>
+                <div class="collectible-item">
+                <img id="collectiblesImage5" src="https://i.ibb.co/c1wR85x/Locked-Image5.png" alt="Collectibles Image 5" style="display: inline-block; margin-top: 10; width: 100px;">
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="coin-counter">
+        <img src="https://static-00.iconduck.com/assets.00/gold-coin-icon-512x512-ehq45y6s.png" width="30" height="30">
+        <div id="coinCounter">Coins: 10</div>
+    </div>
+
+    <script>
+        console.log("Hello World!")
+
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const links = sidebar.querySelectorAll('a');
+            sidebar.classList.toggle('expanded');
+            
+            // Update active class for the home link when minimized
+            links.forEach(link => {
+                if (link.classList.contains('active')) {
+                    link.classList.toggle('active');
+                }
+            });
+            const smallerText = sidebar.querySelector('.smaller');
+            smallerText.style.display = sidebar.classList.contains('expanded') ? 'none' : 'block'; 
+        }
+
+        function setActiveLink(clickedLink) {
+            const sidebar = document.querySelector('.sidebar');
+            const links = sidebar.querySelectorAll('a');
+
+            // Remove the 'active' class from all links
+            links.forEach(link => {
+                link.classList.remove('active');
+            });
+
+            // Add the 'active' class to the clicked link
+            clickedLink.classList.add('active');
+        }
+
+        function toggleHome() {
+            $('#generateForm').show()
+            $('#collectibles-section').hide()
+            $('#lootbox-container').hide()
+        }
+        function toggleLootbox() {
+            $('#lootbox-container').show()
+            $('#generateForm').hide()
+            $('#collectibles-section').hide()
+            $('#response-container').hide()
+            $('#feedback-container').hide()
+        }
+        function toggleCollectibles() {
+            $('#lootbox-container').hide()
+            $('#generateForm').hide()
+            $('#collectibles-section').show()
+            $('#response-container').hide()
+            $('#feedback-container').hide()
+        }
+
+        function setActiveLink(element) {
+            // Get all sidebar links
+            var sidebarLinks = document.querySelectorAll('.sidebar a');
+
+            // Remove the 'active' class from all links
+            sidebarLinks.forEach(function(link) {
+                link.classList.remove('active');
+            });
+
+            // Add the 'active' class to the clicked link
+            element.classList.add('active');
+        }
+
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        let coins = 10
+        let rewards_1 = 0
+        let rewards_2 = 0
+        let rewards_3 = 0
+        let rewards_4 = 0
+        let rewards_5 = 0
+
+        $(document).ready(function() {
+            document.getElementById("openButton").addEventListener("click", openLootBox);
+        });
+
+        $(document).ready(function() {            
+            $('#generateForm').on('submit', function(event) {
+                event.preventDefault();
+                $('#loader').show();
+        
+                $.ajax({
+                    url: '/generate',
+                    type: 'POST',
+                    data: { 
+                        topic: $('#topic').val(),
+                        difficulty: $('#difficulty').val() 
+                    },
+                    success: function(response) {
+                        $('#loader').hide();
+                        $('#problem-container').show();
+                        $('#response-container').show();
+                        $('#generated-problem').html(response.response);
+                        MathJax.typeset();
+                    },
+                    error: function(error) {
+                        $('#loader').hide();
+                        console.log(error);
+                        alert("Massive Error: I sincerely apologize if this shows up during the competition.");
+                    }
+                });
+            });
+        
+            $('.choice-button').on('click', function(event) {
+                event.preventDefault();
+                var userResponse = $(this).val();
+                var buttonClicked = $(this);
+                $.ajax({
+                    url: '/respond',
+                    type: 'POST',
+                    data: { response: userResponse },
+                    success: function(response) {
+                        $('#loader').hide();
+                        $('#feedback-container').show();
+                        $('#gpt-response').html(response.response);
+                        MathJax.typeset(); // Rerender MathJax content
+        
+                        // Disable all buttons
+                        $('.choice-button').prop('disabled', true);
+                        $('.response').val('');
+                        $('.correct').val('');
+                    },
+                    error: function(error) {
+                        $('#loader').hide();
+                        console.log(error);
+                    }
+                });
+            });
+
+            $('#Generate-Question').on('click', function() {
+                $('#generateForm').hide();
+            });
+
+            $('#choice_A').on('click', function() {
+                setTimeout(function() {
+                    var text = $('#feedback-container').text().toLowerCase().trim();
+                    var difficulty = $('#difficulty').val();
+        
+                    // Check if text contains expected feedback words
+                    if (text.includes("incorrect") || text.includes("wrong") || text.includes("false")) {
+                        $('#choice_A').addClass('button_wrong');
+                    } else if (text.includes("correct") || text.includes("true")) {
+                        $('#choice_A').addClass('button_correct');
+                        if (difficulty == "Easy") {
+                                coins++;
+                            } else if (difficulty == "Medium") {
+                                coins += 5;
+                            } else if (difficulty == "Hard") {
+                                coins += 10;
+                            } else if (difficulty == "Difficult") {
+                                coins += 20;
+                            }
+                        // Update the coin counter in the DOM
+                        $('#coinCounter').text('Coins: ' + coins);
+                    } else {
+                        $('#choice_A').css('background-color', '');
+                    }
+                }, 1500);
+            });
+
+            $('#choice_B').on('click', function() {
+                setTimeout(function() {
+                    var text = $('#feedback-container').text().toLowerCase().trim();
+                    var difficulty = $('#difficulty').val();
+        
+                    // Check if text contains expected feedback words
+                    if (text.includes("incorrect") || text.includes("wrong") || text.includes("false")) {
+                        $('#choice_B').addClass('button_wrong');
+                    } else if (text.includes("correct") || text.includes("true")) {
+                        $('#choice_B').addClass('button_correct');
+                        if (difficulty == "Easy") {
+                            coins++;
+                        } else if (difficulty == "Medium") {
+                            coins += 5;
+                        } else if (difficulty == "Hard") {
+                            coins += 10;
+                        } else if (difficulty == "Difficult") {
+                            coins += 20;
+                        }
+                        // Update the coin counter in the DOM
+                        $('#coinCounter').text('Coins: ' + coins);
+                    } else {
+                        $('#choice_B').css('background-color', '');
+                    }
+                }, 1500);
+            });
+
+            $('#choice_C').on('click', function() {
+                setTimeout(function() {
+                    var text = $('#feedback-container').text().toLowerCase().trim();
+                    var difficulty = $('#difficulty').val();
+        
+                    // Check if text contains expected feedback words
+                    if (text.includes("incorrect") || text.includes("wrong") || text.includes("false")) {
+                        $('#choice_C').addClass('button_wrong');
+                    } else if (text.includes("correct") || text.includes("true")) {
+                        $('#choice_C').addClass('button_correct');
+                        if (difficulty == "Easy") {
+                            coins++;
+                        } else if (difficulty == "Medium") {
+                            coins += 5;
+                        } else if (difficulty == "Hard") {
+                            coins += 10;
+                        } else if (difficulty == "Difficult") {
+                            coins += 20;
+                        }
+                        // Update the coin counter in the DOM
+                        $('#coinCounter').text('Coins: ' + coins);
+                    } else {
+                        $('#choice_C').css('background-color', '');
+                    }
+                }, 1500);
+            });
+
+            $('#choice_D').on('click', function() {
+                setTimeout(function() {
+                    var text = $('#feedback-container').text().toLowerCase().trim();
+                    var difficulty = $('#difficulty').val();
+        
+                    // Check if text contains expected feedback words
+                    if (text.includes("incorrect") || text.includes("wrong") || text.includes("false")) {
+                        $('#choice_D').addClass('button_wrong');
+                    } else if (text.includes("correct") || text.includes("true")) {
+                        $('#choice_D').addClass('button_correct');
+                        if (difficulty == "Easy") {
+                            coins++;
+                        } else if (difficulty == "Medium") {
+                            coins += 5;
+                        } else if (difficulty == "Hard") {
+                            coins += 10;
+                        } else if (difficulty == "Difficult") {
+                            coins += 20;
+                        }
+                        // Update the coin counter in the DOM
+                        $('#coinCounter').text('Coins: ' + coins);
+                    } else {
+                        $('#choice_D').css('background-color', '');
+                    }
+                }, 1500);
+            });
+        });
+        function openLootBox() {
+            if (coins >= 10) {
+                // Decrement coins by 10
+                coins -= 10;
+                
+                // Debugging log to check if coins are updated
+                console.log("Coins after deduction: " + coins);
+                
+                // Update the coin counter in the DOM
+                $('#coinCounter').text('Coins: ' + coins);
+                
+                // List all rewards and their associated images
+                const rewards = [
+                    { name: "Reward 1", img: "https://i.ibb.co/x19wHzH/Image1.png" },
+                    { name: "Reward 2", img: "https://i.ibb.co/CHG6zHN/Image2.png" },
+                    { name: "Reward 3", img: "https://i.ibb.co/KsjkrfW/Image3.png" },
+                    { name: "Reward 4", img: "https://i.ibb.co/j3HbrdN/Image4.png" },
+                    { name: "Reward 5", img: "https://i.ibb.co/pvsQm2j/Image5.png" }
+                ];
+                
+                const randomIndex = Math.floor(Math.random() * rewards.length);
+                const reward = rewards[randomIndex];
+                
+                // Display the reward text
+                document.getElementById("rewardDisplay").textContent = 'You got ' + reward.name + '!';
+                
+                // Display the reward image
+                const rewardImage = document.getElementById("rewardImage");
+                rewardImage.src = reward.img;
+                rewardImage.style.display = "inline-block";
+                
+                // Update collectibles section based on reward received
+                if (reward.name === "Reward 1") {
+                    rewards_1++;
+                    collectiblesImage1.src = 'https://i.ibb.co/x19wHzH/Image1.png';
+                } else if (reward.name === "Reward 2") {
+                    rewards_2++;
+                    collectiblesImage2.src = 'https://i.ibb.co/CHG6zHN/Image2.png';
+                } else if (reward.name === "Reward 3") {
+                    rewards_3++;
+                    collectiblesImage3.src = 'https://i.ibb.co/KsjkrfW/Image3.png';
+                } else if (reward.name === "Reward 4") {
+                    rewards_4++;
+                    collectiblesImage4.src = 'https://i.ibb.co/j3HbrdN/Image4.png';
+                } else if (reward.name === "Reward 5") {
+                    rewards_5++;
+                    collectiblesImage5.src = 'https://i.ibb.co/pvsQm2j/Image5.png';
+                }
+            } else {
+                alert("You don't have enough coins to open a loot box!");
+                $('#coinCounter').text('Coins: ' + coins);
+            }
+        }
+    </script>
+</html>
