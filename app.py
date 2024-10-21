@@ -2,7 +2,7 @@ import openai
 from random import randrange
 from time import sleep
 from flask import Flask, render_template, request, jsonify
-openai.api_key = 'sk-proj-oBGiB1JdyO4aXOM3DM2MT3BlbkFJDIzdv21tBSwMptrL08es'
+openai.api_key = ''
 
 app = Flask(__name__)
 
