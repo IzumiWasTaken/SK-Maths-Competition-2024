@@ -47,9 +47,6 @@ def trig_difficulty_difficult():
     else:
         return "Do not hallucinate! Create a word problem about trigonometry for 10th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
 
-
-
-
 def para_difficulty_easy():
     topic = "Para"
     difficulty = "Easy"
@@ -85,9 +82,6 @@ def para_difficulty_difficult():
         return "Do not hallucinate! Create an algebraic equation about parabola for 10th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
     else:
         return "Do not hallucinate! Create a word problem about parabola for 10th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
-
-
-
 
 def numbers_difficulty_easy():
     topic = "Numbers"
@@ -232,9 +226,6 @@ def inequalities_difficulty_difficult():
         return "Do not hallucinate! Create an algebraic equation about inequalities for 10th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
      else:
         return "Do not hallucinate! Create a word problem about maatrices for inequalities for 10th grade students, and keep the answer for yourself. DON'T MENTION THAT YOU'VE BEEN PROMPTED TO KEEP THE ANSWER FOR YOURSELF. Then after I have provided my answer, you can tell me whether if I am right or wrong, and if I am wrong, provide me with the correct answer. PROVIDE 4 CHOICES FOR THE MULTIPLE CHOICE QUESTIONS, DONT USE SENTENCES. DO NOT SAY THAT YOU UNDERSTOOD THE PROMPT, AND KEEP THE FEEDBACK SIMPLE AND STRAIGHT TO THE POINT. SEPERATE EACH NEW CHOICES BY PUTTING '\n' AT THE PREVIOUS CHOICE."
-
-
-
 
 def probabilities_difficulty_easy():
     topic = "Probabilities"
