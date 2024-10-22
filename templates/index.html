@@ -31,7 +31,7 @@
         }
 
         .sidebar.expanded {
-            width: 60px;
+            width: 80px;
         }
 
         .sidebar .toggle-btn {
@@ -281,6 +281,75 @@
             bottom: 0;
             width: 100%;
         }
+
+        .loader {
+            width: 48px;
+            height: 48px;
+            background: #fff;
+            --c: no-repeat linear-gradient(#000 0 0);
+            --s: 18px 18px;
+            -webkit-mask:
+            var(--c) left 4px top 4px,
+            var(--c) right 4px top 4px,
+            var(--c) right 4px bottom 4px,
+            var(--c) left 4px bottom 4px,
+            linear-gradient(#000 0 0);
+            -webkit-mask-composite: xor;
+            mask:
+            var(--c) left 4px top 4px,
+            var(--c) right 4px top 4px,
+            var(--c) right 4px bottom 4px,
+            var(--c) left 4px bottom 4px,
+            linear-gradient(#000 0 0);
+            mask-composite: exclude;
+            animation: l5 1.5s infinite;
+            display: none;
+            position: fixed; /* Fixed to viewport */
+            top: 50%; /* Center vertically */
+            left: 50%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Center precisely */
+            z-index: 10000; /* Ensure it's on top */
+            background-color: #B392F0; /* To ensure visibility */
+        }
+
+        @keyframes l5 {
+            0%    { 
+              -webkit-mask-size: 0 0, 0 0, 0 0, 0 0, auto; 
+              mask-size: 0 0, 0 0, 0 0, 0 0, auto;
+            }
+            12.5% { 
+              -webkit-mask-size: var(--s), 0 0, 0 0, 0 0, auto; 
+              mask-size: var(--s), 0 0, 0 0, 0 0, auto;
+            }
+            25%   { 
+              -webkit-mask-size: var(--s), var(--s), 0 0, 0 0, auto; 
+              mask-size: var(--s), var(--s), 0 0, 0 0, auto;
+            }
+            37.5% { 
+              -webkit-mask-size: var(--s), var(--s), var(--s), 0 0, auto; 
+              mask-size: var(--s), var(--s), var(--s), 0 0, auto;
+            }
+            50%   { 
+              -webkit-mask-size: var(--s), var(--s), var(--s), var(--s), auto; 
+              mask-size: var(--s), var(--s), var(--s), var(--s), auto;
+            }
+            62.5% { 
+              -webkit-mask-size: 0 0, var(--s), var(--s), var(--s), auto; 
+              mask-size: 0 0, var(--s), var(--s), var(--s), auto;
+            }
+            75%   { 
+              -webkit-mask-size: 0 0, 0 0, var(--s), var(--s), auto; 
+              mask-size: 0 0, 0 0, var(--s), var(--s), auto;
+            }
+            87.5% { 
+              -webkit-mask-size: 0 0, 0 0, 0 0, var(--s), auto; 
+              mask-size: 0 0, 0 0, 0 0, var(--s), auto;
+            }
+            100%  { 
+              -webkit-mask-size: 0 0, 0 0, 0 0, 0 0, auto; 
+              mask-size: 0 0, 0 0, 0 0, 0 0, auto;
+            }
+        }
     </style>
 </head>
 
@@ -330,8 +399,8 @@
                     <option value="Difficult">Difficult</option>
                 </select>
                 <button class="generate-q" id="Generate-Question"  type="submit"> → Generate Question</button>
+                <div class="loader" id="loader"></div>
             </form>
-            <div class="loader" id="loader"></div>
             <div id="problem-container">
                 <h2>Generated Problem:</h2>
                 <div id="generated-problem"></div> <!-- Changed to div for LaTex -->
@@ -387,7 +456,7 @@
     </div>
     <div class="coin-counter">
         <img src="https://static-00.iconduck.com/assets.00/gold-coin-icon-512x512-ehq45y6s.png" width="30" height="30">
-        <div id="coinCounter">Coins: 10</div>
+        <div id="coinCounter">Coins: 100</div>
     </div>
 
     <script>
@@ -424,12 +493,14 @@
         function toggleHome() {
             $('#generateForm').show()
             $('#collectibles-section').hide()
+            $('#generated-problem').hide()
             $('#lootbox-container').hide()
         }
         function toggleLootbox() {
             $('#lootbox-container').show()
             $('#generateForm').hide()
             $('#collectibles-section').hide()
+            $('#generated-problem').hide()
             $('#response-container').hide()
             $('#feedback-container').hide()
         }
@@ -460,7 +531,7 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        let coins = 10
+        let coins = 100
         let rewards_1 = 0
         let rewards_2 = 0
         let rewards_3 = 0
@@ -471,10 +542,16 @@
             document.getElementById("openButton").addEventListener("click", openLootBox);
         });
 
+        const loader = document.getElementById('loader');
+        const form = document.getElementById('generateForm');
+
         $(document).ready(function() {            
             $('#generateForm').on('submit', function(event) {
                 event.preventDefault();
-                $('#loader').show();
+                console.log('Before: ', loader.style.display); // Log display state before
+                console.log('Form submitted, showing loader...');
+                loader.style.display = 'block';
+                console.log('After: ', loader.style.display); // Log display state after
         
                 $.ajax({
                     url: '/generate',
@@ -484,14 +561,14 @@
                         difficulty: $('#difficulty').val() 
                     },
                     success: function(response) {
-                        $('#loader').hide();
+                        loader.style.display = 'none';
                         $('#problem-container').show();
                         $('#response-container').show();
                         $('#generated-problem').html(response.response);
                         MathJax.typeset();
                     },
                     error: function(error) {
-                        $('#loader').hide();
+                        loader.style.display = 'none';
                         console.log(error);
                         alert("Massive Error: I sincerely apologize if this shows up during the competition.");
                     }
@@ -507,7 +584,7 @@
                     type: 'POST',
                     data: { response: userResponse },
                     success: function(response) {
-                        $('#loader').hide();
+                        loader.style.display = 'none';
                         $('#feedback-container').show();
                         $('#gpt-response').html(response.response);
                         MathJax.typeset(); // Rerender MathJax content
@@ -518,14 +595,33 @@
                         $('.correct').val('');
                     },
                     error: function(error) {
-                        $('#loader').hide();
+                        loader.style.display = 'none';
                         console.log(error);
                     }
                 });
             });
 
+            $('#next-question').on('click', function() {
+                $('#generateForm')[0].reset();
+                $('#problem-container, #response-container, #feedback-container').hide();
+                $('#generated-problem, #gpt-response').text('');
+                $('.choice-button').removeClass('button_correct button_wrong').prop('disabled', false);
+                $('#generateForm').show();
+            });
+
+            $('#back-button').on('click', function() {
+                $('#generateForm')[0].reset();
+                $('#problem-container, #response-container, #feedback-container').hide();
+                $('#generated-problem, #gpt-response').text('');
+                $('.gacha-center').show();
+                $('#gacha-center').show();
+                $('.gacha-button').show();
+                $('#gacha-button').show();
+            });
+
             $('#Generate-Question').on('click', function() {
                 $('#generateForm').hide();
+                $('#generated-problem').show();
             });
 
             $('#choice_A').on('click', function() {
