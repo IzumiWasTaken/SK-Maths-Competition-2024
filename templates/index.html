@@ -103,6 +103,21 @@
             display: inline;
         }
 
+        .sidebar hr {
+            border: 1px solid #ccc; /* Adjust color as needed */
+            width: 90%; /* Adjust as needed */
+            margin: 10px auto; /* Center horizontally */
+        }
+
+        .sidebar-footer-text {
+            padding: 10px;
+            font-size: 14px;
+            color: #666; /* Adjust text color as needed */
+            left: 5%;
+            transform: translateY(-50%);
+            margin-top: 20px;
+            padding-right: 15px;
+        }
 
         .content {
             margin-left: 260px;
@@ -234,7 +249,7 @@
             gap: 10px;
         }
 
-                /* Collectibles Grid */
+        /* Collectibles Grid */
         .collectibles-section {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -250,19 +265,6 @@
             align-items: center;
             color: #999;
             font-size: 18px;
-        }
-
-        /* Larger Item Styles */
-        .collectibles-section .collectible-item:nth-child(1),
-        .collectibles-section .collectible-item:nth-child(2) {
-            grid-column: span 2;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .collectibles-section {
-                grid-template-columns: repeat(2, 1fr);
-            }
         }
 
         @media (max-width: 480px) {
@@ -281,22 +283,6 @@
             position: fixed;
             bottom: 0;
             width: 100%;
-        }
-
-        .sidebar hr {
-            border: 1px solid #ccc; /* Adjust color as needed */
-            width: 90%; /* Adjust as needed */
-            margin: 10px auto; /* Center horizontally */
-        }
-
-        .sidebar-footer-text {
-            padding: 10px;
-            font-size: 14px;
-            color: #666; /* Adjust text color as needed */
-            left: 5%;
-            transform: translateY(-50%);
-            margin-top: 15px;
-            padding-right: 15px;
         }
 
         .loader {
@@ -453,7 +439,7 @@
                     <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; align-items: center; text-align: center;">
                         <h3>Standard Lootbox</h3>
                         <p>Open lootbox to receive rewards!</p>
-                        <button class="button" id="openButton">Open Loot Box</button>
+                        <button class="button" id="openButton">Open Loot Box [ -10 Coins ]</button>
                     </div>
                 </div>
             </div>
@@ -462,13 +448,13 @@
             </header>
             <section class="collectibles-section" style="display: none;" id="collectibles-section">
                 <div class="collectible-item">
-                    <img id="collectiblesImage1" src="https://i.ibb.co/nbg32wH/Locked-Image1.png" alt="Collectibles Image 1">
+                    <img id="collectiblesImage1" src="https://i.ibb.co/nbg32wH/Locked-Image1.png" alt="Collectibles Image 1" style="width: 100px;">
                 </div>
                 <div class="collectible-item">
-                    <img id="collectiblesImage2" src="https://i.ibb.co/9Hz69Pq/Locked-Image2.png" alt="Collectibles Image 2">
+                    <img id="collectiblesImage2" src="https://i.ibb.co/9Hz69Pq/Locked-Image2.png" alt="Collectibles Image 2" style="width: 100px;">
                 </div>
                 <div class="collectible-item">
-                    <img id="collectiblesImage3" src="https://i.ibb.co/vw3HbsC/Locked-Image3.png" alt="Collectibles Image 3">
+                    <img id="collectiblesImage3" src="https://i.ibb.co/vw3HbsC/Locked-Image3.png" alt="Collectibles Image 3" style="width: 100px;">
                 </div>
                 <div class="collectible-item">
                     <img id="collectiblesImage4" src="https://i.ibb.co/SNbWKgw/Locked-Image4.png" alt="Collectibles Image 4" style="display: inline-block; margin-top: 10; width: 100px;">
