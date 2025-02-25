@@ -7,17 +7,31 @@
 
 
 ## Installation
-To set up this project, clone the repository and install the required dependencies:
+To set up this project, clone the repository by:
 
 ```bash
-eeee
+git clone https://github.com/IzumiWasTaken/Maths-Competition-2024-.git
 ```
 
-ee
+and install the required dependencies by:
+
+### For **Windows**:
+```bash
+pip install -r requirements.txt
+```
+### For **MacOS**:
+```bash
+pip3 install -r requirements.txt
+```
 ## Usage
 To run the project:
+### For **Windows**:
+``` bash
+python app.py
 ```
-eeeeee
+### For **MacOS**:
+``` bash
+python3 app.py
 ```
 ## License
 
