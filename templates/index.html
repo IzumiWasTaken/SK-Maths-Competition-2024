@@ -448,19 +448,19 @@
             </header>
             <section class="collectibles-section" style="display: none;" id="collectibles-section">
                 <div class="collectible-item">
-                    <img id="collectiblesImage1" src="https://i.ibb.co/nbg32wH/Locked-Image1.png" alt="Collectibles Image 1" style="width: 100px;">
+                    <img id="collectiblesImage1" src="https://i.ibb.co/vvLxcFmR/Locked-Image1.png" alt="Collectibles Image 1" style="width: 100px;">
                 </div>
                 <div class="collectible-item">
-                    <img id="collectiblesImage2" src="https://i.ibb.co/9Hz69Pq/Locked-Image2.png" alt="Collectibles Image 2" style="width: 100px;">
+                    <img id="collectiblesImage2" src="https://i.ibb.co/ynv9p09Z/Locked-Image2.png" alt="Collectibles Image 2" style="width: 100px;">
                 </div>
                 <div class="collectible-item">
-                    <img id="collectiblesImage3" src="https://i.ibb.co/vw3HbsC/Locked-Image3.png" alt="Collectibles Image 3" style="width: 100px;">
+                    <img id="collectiblesImage3" src="https://i.ibb.co/PzjJg36h/Locked-Image3.png" alt="Collectibles Image 3" style="width: 100px;">
                 </div>
                 <div class="collectible-item">
-                    <img id="collectiblesImage4" src="https://i.ibb.co/SNbWKgw/Locked-Image4.png" alt="Collectibles Image 4" style="display: inline-block; margin-top: 10; width: 100px;">
+                    <img id="collectiblesImage4" src="https://i.ibb.co/MDg7bcQY/Locked-Image4.png" alt="Collectibles Image 4" style="display: inline-block; margin-top: 10; width: 100px;">
                 </div>
                 <div class="collectible-item">
-                <img id="collectiblesImage5" src="https://i.ibb.co/c1wR85x/Locked-Image5.png" alt="Collectibles Image 5" style="display: inline-block; margin-top: 10; width: 100px;">
+                <img id="collectiblesImage5" src="https://i.ibb.co/9HBHNNLp/Locked-Image5.png" alt="Collectibles Image 5" style="display: inline-block; margin-top: 10; width: 100px;">
                 </div>
             </section>
         </div>
@@ -506,9 +506,6 @@
             $('#collectibles-section').hide()
             $('#generated-problem').hide()
             $('#lootbox-container').hide()
-            $('#response-container').hide()
-            $('#feedback-container').hide()
-            $('#problem-container').hide()
         }
         function toggleLootbox() {
             $('#lootbox-container').show()
@@ -759,11 +756,11 @@
                 
                 // List all rewards and their associated images
                 const rewards = [
-                    { name: "Reward 1", img: "https://i.ibb.co/x19wHzH/Image1.png" },
-                    { name: "Reward 2", img: "https://i.ibb.co/CHG6zHN/Image2.png" },
-                    { name: "Reward 3", img: "https://i.ibb.co/KsjkrfW/Image3.png" },
-                    { name: "Reward 4", img: "https://i.ibb.co/j3HbrdN/Image4.png" },
-                    { name: "Reward 5", img: "https://i.ibb.co/pvsQm2j/Image5.png" }
+                    { name: "Reward 1", img: "https://i.ibb.co/FqdYK6jZ/Image1.png" },
+                    { name: "Reward 2", img: "https://i.ibb.co/GQg4HsjD/Image2.png" },
+                    { name: "Reward 3", img: "https://i.ibb.co/8gHMBRKJ/Image3.png" },
+                    { name: "Reward 4", img: "https://i.ibb.co/v6HcGWV1/Image4.png" },
+                    { name: "Reward 5", img: "https://i.ibb.co/HfXh0BcM/Image5.png" }
                 ];
                 
                 const randomIndex = Math.floor(Math.random() * rewards.length);
@@ -780,19 +777,19 @@
                 // Update collectibles section based on reward received
                 if (reward.name === "Reward 1") {
                     rewards_1++;
-                    collectiblesImage1.src = 'https://i.ibb.co/x19wHzH/Image1.png';
+                    collectiblesImage1.src = 'https://i.ibb.co/FqdYK6jZ/Image1.png';
                 } else if (reward.name === "Reward 2") {
                     rewards_2++;
-                    collectiblesImage2.src = 'https://i.ibb.co/CHG6zHN/Image2.png';
+                    collectiblesImage2.src = 'https://i.ibb.co/GQg4HsjD/Image2.png';
                 } else if (reward.name === "Reward 3") {
                     rewards_3++;
-                    collectiblesImage3.src = 'https://i.ibb.co/KsjkrfW/Image3.png';
+                    collectiblesImage3.src = 'https://i.ibb.co/8gHMBRKJ/Image3.png';
                 } else if (reward.name === "Reward 4") {
                     rewards_4++;
-                    collectiblesImage4.src = 'https://i.ibb.co/j3HbrdN/Image4.png';
+                    collectiblesImage4.src = 'https://i.ibb.co/v6HcGWV1/Image4.png';
                 } else if (reward.name === "Reward 5") {
                     rewards_5++;
-                    collectiblesImage5.src = 'https://i.ibb.co/pvsQm2j/Image5.png';
+                    collectiblesImage5.src = 'https://i.ibb.co/HfXh0BcM/Image5.png';
                 }
             } else {
                 alert("You don't have enough coins to open a loot box!");
